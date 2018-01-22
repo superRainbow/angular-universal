@@ -10,7 +10,7 @@ import { PagesRoutingModule } from './pages/pages-routing.module';
     AppComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({appId: 'star-sales'}),
     PagesModule,
     PagesRoutingModule
   ],
