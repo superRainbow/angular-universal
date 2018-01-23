@@ -1,5 +1,4 @@
 {
-  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
     "name": "star-sales"
   },
@@ -19,9 +18,15 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
+        "../node_modules/owl.carousel/dist/assets/owl.carousel.css",
+        "../node_modules/owl.carousel/dist/assets/owl.theme.default.css",
+        "assets/iconfont/iconfont.css",
         "styles.scss"
       ],
-      "scripts": [],
+      "scripts": [
+        "../node_modules/jquery/dist/jquery.js",
+        "../node_modules/owl.carousel/dist/owl.carousel.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
@@ -43,9 +48,15 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
+        "../node_modules/owl.carousel/dist/assets/owl.carousel.css",
+        "../node_modules/owl.carousel/dist/assets/owl.theme.default.css",
+        "assets/iconfont/iconfont.css",
         "styles.scss"
       ],
-      "scripts": [],
+      "scripts": [
+        "../node_modules/jquery/dist/jquery.js",
+        "../node_modules/owl.carousel/dist/owl.carousel.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",

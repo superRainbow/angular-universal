@@ -4,21 +4,15 @@ import { Routes, RouterModule } from '@angular/router';
 import { MainComponent } from './main/main.component';
 import { ServiceComponent } from './service/service.component';
 
-// const routes: Routes = [
-//   { path: '',
-//     component: MainComponent,
-//     children: [
-//       { path: '', redirectTo: 'service', pathMatch: 'full' },
-//       { path: 'service', component: ServiceComponent },
-//       { path: '**', redirectTo: 'index'}
-//     ]
-//   }
-// ];
-
 const routes: Routes = [
-  { path: '', redirectTo: 'service', pathMatch: 'full' },
-  { path: 'service', component: ServiceComponent },
-  { path: '**', redirectTo: 'index'}
+  { path: '',
+    component: MainComponent,
+    children: [
+      { path: '', redirectTo: 'service', pathMatch: 'full' },
+      { path: 'service', component: ServiceComponent },
+      { path: '**', redirectTo: 'service'}
+    ]
+  }
 ];
 
 @NgModule({

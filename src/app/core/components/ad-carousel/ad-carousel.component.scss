@@ -1,0 +1,23 @@
+:host /deep/ .owl-dots{
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  .owl-dot{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin: 20px 5px;
+    border-radius: 50%;
+    border: 1px solid #EEE;
+    background: #EEE;
+    &.active{
+      border: #d7002a 3px solid;
+      background-color: transparent;
+    }
+  }
+}
+
+.owl-carousel{
+  position: absolute;
+}

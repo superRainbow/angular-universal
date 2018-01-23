@@ -5,11 +5,17 @@
     "baseUrl": "./",
     // Set the module format to "commonjs":
     "module": "commonjs",
-    "types": []
+    "types": [
+      "jquery",
+      "owl.carousel"
+    ]
   },
   "exclude": [
     "test.ts",
-    "**/*.spec.ts"
+    "**/*.spec.ts",
+    "node_modules",
+    "typings/main",
+    "typings/main.d.ts"
   ],
   // Add "angularCompilerOptions" with the AppServerModule you wrote
   // set as the "entryModule".
