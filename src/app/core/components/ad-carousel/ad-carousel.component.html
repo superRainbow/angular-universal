@@ -1,8 +1,8 @@
 <div class="owl-carousel">
   <div *ngFor="let item of data;let i = index;">
     <a class="link" [attr.data-item]="i">
-      <img class="desktop-img" [src]="imageService.getUrl(item.imgKey)" />
-      <img class="mobile-img" [src]="imageService.getUrl(item.imgSmallKey)" />
+      <img class="desktop-img" [src]="item.imgKey" />
+      <img class="mobile-img" [src]="item.imgSmallKey" />
     </a>
   </div>
 </div>

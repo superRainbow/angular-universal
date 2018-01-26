@@ -30,21 +30,24 @@ section, article, aside, footer, header, nav, main {
 // my reset
 a{
   text-decoration: none;
+  display: block;
+  color: #ffffff;
 	cursor: pointer;
   &:hover,&:focus{
     text-decoration: none;
+    color: #ffffff;
   }
 }
 h1, h2, h3, h4, h5 {
     margin: 0px;
 }
-p,ul{
+p{
   margin: 0;
 }
-ul{
-  list-style: none;
+ul, ol{
   margin: 0;
   padding: 0;
+  list-style-type: none;
 }
 em{
   font-style:normal;

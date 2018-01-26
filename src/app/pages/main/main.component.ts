@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, PLATFORM_ID, Inject } from '@angular/core';
+import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 
 /**
  * 網頁最上層元件
@@ -12,8 +13,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
-
-  constructor() { }
+  isBrowser;
+  constructor(@Inject(PLATFORM_ID) platformId: string) {
+    this.isBrowser = isPlatformBrowser(platformId);
+ }
 
   ngOnInit() {
   }

@@ -10,16 +10,3 @@ html{
 body{
   overflow-x: hidden;
 }
-
-a{
-  color: #ffffff;
-  display: block;
-  &:hover{
-    color: #ffffff;
-  }
-}
-ul, ol{
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-}

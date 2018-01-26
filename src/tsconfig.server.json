@@ -20,6 +20,7 @@
   // Add "angularCompilerOptions" with the AppServerModule you wrote
   // set as the "entryModule".
   "angularCompilerOptions": {
+    "genDir": "./dist/ngfactory",
     "entryModule": "app/app.server.module#AppServerModule"
   }
 }

@@ -1,0 +1,58 @@
+@import "~assets/scss/helpers/index";
+
+.fixed-page{
+  position: fixed;
+  right: 20px;
+  bottom: 40px;
+  display: flex;
+  li{
+    &+li{
+      margin-left: 17px;
+    }
+    &.mail{
+      a:after{
+        content: "\ea08";
+      }
+    }
+    &.top{
+      a:after{
+        content: "\ea0e";
+      }
+    }
+  }
+  a{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 9px 17px 0 rgba(0,0,0,0.10);
+    text-align: center;
+    position: relative;
+    color: $theme-middle-grey;
+    @extend %bgImg-text-hidden;
+    &:after{
+      font-size: 30px;
+      font-family: 'iconfont';
+      display: block;
+      position: absolute;
+      top: 20px;
+      left: -50px;
+    }
+    &:hover{
+      color: #fff;
+      background: $theme-green;
+    }
+  }
+  @include pad-width{
+    flex-direction: column;
+    li+li{
+      margin: 20px 0 0 0;
+    }
+  }
+  @include phone-width{
+    flex-direction: column;
+    li+li{
+      margin: 20px 0 0 0;
+    }
+  }
+}

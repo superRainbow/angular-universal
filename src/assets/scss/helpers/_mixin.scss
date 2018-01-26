@@ -13,7 +13,7 @@
 }
 
 // 手機
-@mixin device-width() {
+@mixin phone-width() {
   @media all and (max-width: $pads-media) {
     @content;
   }

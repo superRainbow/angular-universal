@@ -1,3 +1,5 @@
+@import "~assets/scss/helpers/index";
+
 :host /deep/ .owl-dots{
   text-align: center;
   width: 100%;
@@ -9,15 +11,69 @@
     height: 15px;
     margin: 20px 5px;
     border-radius: 50%;
-    border: 1px solid #EEE;
-    background: #EEE;
+    border: 1px solid #fff;
+    background: #fff;
+    opacity: 0.6;
     &.active{
-      border: #d7002a 3px solid;
-      background-color: transparent;
+      border: #247E9B 3px solid;
+      background: #247E9B;
+      opacity: 1;
     }
   }
 }
-
-.owl-carousel{
+:host /deep/ .owl-nav{
   position: absolute;
+  width: 100%;
+  height: 40px;
+  top: 50%;
+  margin-top: 0px;
+  .owl-prev, .owl-next{
+    width: 30px;
+    height: 50px;
+    transition: all .3s ease;
+    position: absolute;
+    opacity: 0;
+    @extend %bgImg-text-hidden;
+    &:after{
+      font-size: 30px;
+      font-family: 'iconfont';
+      text-shadow: rgba(0,0,0,0.25) 2px 2px 5px;
+      color: #ffffff;
+      display: block;
+      position: absolute;
+      top: 10px;
+      left: -20px;
+    }
+  }
+  .owl-prev{
+    left: 0px;
+    &:after{
+      content: "\ea03";
+    }
+  }
+  .owl-next{
+    right: 0px;
+    &:after{
+      content: "\ea02";
+    }
+  }
+}
+:host /deep/ .owl-carousel{
+  position: absolute;
+  &:hover{
+    .owl-nav{
+      .owl-prev, .owl-next{
+        opacity: 0.4;
+        &:hover{
+          opacity: 1;
+        }
+      }
+      .owl-prev{
+        left: 20px;
+      }
+      .owl-next{
+        right: 20px;
+      }
+    }
+  }
 }

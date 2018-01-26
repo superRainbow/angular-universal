@@ -4,6 +4,7 @@ header{
   width: 100%;
   background: rgba(0,111,148,0.85);
   position: fixed;
+  z-index: 100;
   &>section{
     max-width: $pc-media;
     height: 85px;
@@ -29,17 +30,15 @@ header{
       display: none;
       width: 33px;
       height: 33px;
-      text-indent: 100%;
-      white-space: nowrap;
-      overflow: hidden;
+      @extend %bgImg-text-hidden;
       position:relative;
       &:before {
-        content: "\f0c9";
+        content: "\ea01";
         display: block;
-        font-family: FontAwesome;
+        font-family: 'iconfont';
         position:absolute;
-        left: -29px;
-        top: 0;
+        left: -33px;
+        top: 3px;
         font-size: 30px;
       }
     }
@@ -84,7 +83,7 @@ header{
       }
     }
   }
-  @include device-width{
+  @include phone-width{
     nav{
       .menu{
         display: block;

@@ -3,11 +3,11 @@ iconfont Webfont
 */
 @font-face {
 	font-family: 'iconfont';
-	src: url('iconfont.eot?1516615937378');
-	src: url('iconfont.eot?#iefix-1516615937378') format('embedded-opentype'),
-		url('iconfont.woff2?1516615937378') format('woff2'),
-		url('iconfont.woff?1516615937378') format('woff'),
-		url('iconfont.ttf?1516615937378') format('truetype');
+	src: url('iconfont.eot?1516843273682');
+	src: url('iconfont.eot?#iefix-1516843273682') format('embedded-opentype'),
+		url('iconfont.woff2?1516843273682') format('woff2'),
+		url('iconfont.woff?1516843273682') format('woff'),
+		url('iconfont.ttf?1516843273682') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -33,38 +33,62 @@ iconfont Webfont
 Glyphs list
 */
 
-.icon-ic_Integration:before {
+.icon-btn_menu:before {
 	content: '\ea01';
 }
 
-.icon-ic_gps:before {
+.icon-btn_next_w:before {
 	content: '\ea02';
 }
 
-.icon-ic_mail:before {
+.icon-btn_previous_w:before {
 	content: '\ea03';
 }
 
-.icon-ic_management:before {
+.icon-ic_Integration:before {
 	content: '\ea04';
 }
 
-.icon-ic_right_arrow:before {
+.icon-ic_cooperation:before {
 	content: '\ea05';
 }
 
-.icon-ic_signature:before {
+.icon-ic_cycle:before {
 	content: '\ea06';
 }
 
-.icon-ic_statistics:before {
+.icon-ic_gps:before {
 	content: '\ea07';
 }
 
-.icon-ic_up:before {
+.icon-ic_mail:before {
 	content: '\ea08';
 }
 
-.icon-icons8-megaphone:before {
+.icon-ic_management:before {
 	content: '\ea09';
+}
+
+.icon-ic_right_arrow:before {
+	content: '\ea0a';
+}
+
+.icon-ic_signature:before {
+	content: '\ea0b';
+}
+
+.icon-ic_statistics:before {
+	content: '\ea0c';
+}
+
+.icon-ic_trust_hand:before {
+	content: '\ea0d';
+}
+
+.icon-ic_up:before {
+	content: '\ea0e';
+}
+
+.icon-icons8-megaphone:before {
+	content: '\ea0f';
 }
