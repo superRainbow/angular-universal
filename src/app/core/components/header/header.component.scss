@@ -1,4 +1,6 @@
 @import "~assets/scss/helpers/index";
+$delay: .1s;
+$menu-items: 4;
 
 header{
   width: 100%;
@@ -28,24 +30,12 @@ header{
     align-items: center;
     .menu{
       display: none;
-      width: 33px;
-      height: 33px;
-      @extend %bgImg-text-hidden;
-      position:relative;
-      &:before {
-        content: "\ea01";
-        display: block;
-        font-family: 'iconfont';
-        position:absolute;
-        left: -33px;
-        top: 3px;
-        font-size: 30px;
-      }
     }
     ul{
       width: 400px;
       display: flex;
       justify-content: space-between;
+      position: relative;
       li{
         width: 100px;
         a{
@@ -84,13 +74,241 @@ header{
     }
   }
   @include phone-width{
+    background: $theme-light-blue;
+    &>section{
+      padding: 0 20px;
+    }
     nav{
       .menu{
         display: block;
       }
       ul{
-        display: none;
+        display: block;
+        width: 100%;
+        position: absolute;
+        top: 85px;
+        left: 0;
+        z-index: 100;
+        height: 0;
+        transition: height ease-in .5s;
+        transition-delay: .3s;
+        li{
+          display: none;
+          opacity: 0;
+          width: 100%;
+          position: relative;
+          top: 0px;
+          animation-fill-mode: forwards;
+          &:before{
+            content: "";
+            display: block;
+            width: calc(100% - 40px);
+            height: 2px;
+            background: #189ec3;
+            position: absolute;
+            left: 20px;
+            top: 0;
+          }
+          &:last-child{
+            &:after{
+              content: "";
+              display: block;
+              width: calc(100% - 40px);
+              height: 2px;
+              background: #189ec3;
+              position: absolute;
+              left: 20px;
+              bottom: 0;
+            }
+          }
+          a{
+            padding: 15px 0;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: initial;
+            &:after{
+              border: 2px solid transparent;
+            }
+            &:hover, &:active{
+              color: #fff;
+              background: #0389ae;
+            }
+          }
+        }
+        &.animate{
+          display: block;
+          height: 600px;
+          background: $theme-light-blue;
+          li{
+            animation-duration: 1s;
+            animation-name: fadeInDown;
+            display: block;
+            @for $i from 1 through $menu-items {
+              &:nth-child(#{$i}) {
+                animation-delay: $delay * $i + $delay;
+              }
+            }
+          }
+        }
       }
     }
+  }
+}
+
+.menu{
+  position: relative;
+  z-index: 1100;
+  input {
+    display: none;
+  }
+  label {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    display: block;
+    cursor: pointer;
+    background: transparent;
+    &:before {
+      -webkit-animation: animationOneReverse 1s ease forwards;
+      animation: animationOneReverse 1s ease forwards;
+    }
+    &:after {
+      -webkit-animation: animationTwoReverse 1s ease forwards;
+      animation: animationTwoReverse 1s ease forwards;
+    }
+  }
+  .burger:before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    width: 40px;
+    height: 2px;
+    border-radius: 2px;
+    background: #fafafa;
+    -webkit-animation: animationBurgerTopReverse 1s ease forwards;
+    animation: animationBurgerTopReverse 1s ease forwards;
+  }
+  .burger:after {
+    content: '';
+    position: absolute;
+    bottom: 6px;
+    width: 40px;
+    height: 2px;
+    border-radius: 2px;
+    background: #fafafa;
+    -webkit-animation: animationBurgerBottomReverse 1s ease forwards;
+    animation: animationBurgerBottomReverse 1s ease forwards;
+  }
+
+  label:before,
+  input:checked + label:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    margin-top: -2px;
+    width: 40px;
+    height: 2px;
+    border-radius: 2px;
+    background: #fafafa;
+  }
+  input:checked + label:before {
+    -webkit-animation: animationOne 1s ease forwards;
+    animation: animationOne 1s ease forwards;
+  }
+  label:after,
+  input:checked + label:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    margin-top: -2px;
+    width: 40px;
+    height: 2px;
+    border-radius: 2px;
+    background: #fafafa;
+  }
+  input:checked + label:after {
+    -webkit-animation: animationTwo 1s ease forwards;
+    animation: animationTwo 1s ease forwards;
+  }
+  input:checked + label .burger:before {
+    -webkit-animation: animationBurgerTop 1s ease forwards;
+    animation: animationBurgerTop 1s ease forwards;
+  }
+  input:checked + label .burger:after {
+    -webkit-animation: animationBurgerBottom 1s ease forwards;
+    animation: animationBurgerBottom 1s ease forwards;
+  }
+}
+
+
+/** menu 動畫 **/
+@keyframes animationOneReverse {
+	0% { transform: rotate(315deg); }
+	25% { transform: rotate(360deg); }
+	50%, 100% { transform: rotate(0deg); }
+}
+@keyframes animationOne {
+	0%, 50% { transform: rotate(0deg); }
+	75% { transform: rotate(360deg); }
+	100% { transform: rotate(315deg); }
+}
+@keyframes animationTwoReverse {
+	0% { transform: rotate(405deg); }
+	25% { transform: rotate(450deg); }
+	50%, 100% { transform: rotate(0deg); }
+}
+@keyframes animationTwo {
+	0%, 50% { transform: rotate(0deg); }
+	75% { transform: rotate(450deg); }
+	100% { transform: rotate(405deg); }
+}
+@keyframes animationBurgerTopReverse {
+	0%, 50% { transform: translateY(12px); opacity: 0; }
+	51% { transform: translateY(12px); opacity: 1; }
+	100% { transform: translateY(0px); opacity: 1; }
+}
+@keyframes animationBurgerTop {
+	0% { transform: translateY(0px); opacity: 1; }
+	50% { transform: translateY(12px); opacity: 1; }
+	51%, 100% { transform: translateY(12px); opacity: 0; }
+}
+@keyframes animationBurgerBottomReverse {
+	0%, 50% { transform: translateY(-12px); opacity: 0; }
+	51% { transform: translateY(-12px); opacity: 1; }
+	100% { transform: translateY(0px); opacity: 1; }
+}
+@keyframes animationBurgerBottom {
+	0% { transform: translateY(0px); opacity: 1; }
+	50% { transform: translateY(-12px); opacity: 1; }
+	51%, 100% { transform: translateY(-12px); opacity: 0; }
+}
+
+/** nav 動畫 **/
+@keyframes drop {
+  from {
+    top: 0px;
+  }
+  70% {
+    top: 165px;
+    animation-timing-function: ease-in;
+  }
+  to {
+    top: 150px;
+    animation-timing-function: ease-out;
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    -ms-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
   }
 }

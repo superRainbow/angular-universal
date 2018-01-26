@@ -12,10 +12,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-
+  showNav = false;
   constructor() { }
 
   ngOnInit() {
+  }
+
+  showMenu() {
+    this.showNav = !this.showNav;
   }
 
 }

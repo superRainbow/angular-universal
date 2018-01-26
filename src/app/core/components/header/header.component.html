@@ -7,8 +7,12 @@
       </a>
     </h1>
     <nav>
-      <a class="menu">選單</a>
-      <ul>
+      <!-- <a class="menu">選單</a> -->
+      <div class="menu">
+        <input id="click" name="exit" type="checkbox" (click)="showMenu()" />
+        <label for="click"><span class="burger"></span></label>
+      </div>
+      <ul [ngClass]="{'animate': showNav}">
         <li><a>服務</a></li>
         <li><a>案例</a></li>
         <li><a>關於</a></li>

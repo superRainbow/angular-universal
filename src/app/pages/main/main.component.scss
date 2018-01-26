@@ -1,0 +1,7 @@
+@import "~assets/scss/helpers/index";
+
+.main{
+  @include phone-width{
+    padding-top: 85px;
+  }
+}

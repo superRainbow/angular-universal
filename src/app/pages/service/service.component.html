@@ -1,5 +1,68 @@
-<p>
-  service works!
-</p>
-
-<i class="icon-ic_Integration"></i>
+<section class="ad" *ngIf="adData.length >0">
+  <app-ad-carousel [data]="adData" [options]="adOptins"></app-ad-carousel>
+</section>
+<section class="belief">
+    <article>
+        <div class="img">
+            <img src="./assets/img/ic_service@2x.png">
+        </div>
+        <div class="word">
+          <h2>服務理念</h2>
+          <p>在成本日益高漲的年代，我們知道身為高階主管的您，除了將作業流程行動化外，更需要一個可以有效降低人員學習曲線、將成功的作業流程複製給所有同仁，同樣重要的事，在變化快速的行動平台上，您需要一個實力堅強，同時擁有豐富實戰經驗的開發及維運團隊，讓您可以將心力放在公司業務的拓展，客戶關係的維繫，我們團隊多年來耕耘於行動平台，是您可以放心的合作夥伴。</p>
+        </div>
+    </article>
+</section>
+<section class="features">
+    <article>
+        <h2>服務功能</h2>
+        <ul>
+          <li *ngFor="let item of featuresList">
+            <a>
+                <i [ngClass]="item.class"></i>
+                <h3>{{ item.title }}</h3>
+                <ol>
+                  <li *ngFor="let o of item.des">{{ o }}</li>
+                </ol>
+            </a>
+          </li>
+        </ul>
+    </article>
+</section>
+<section class="process">
+  <div class="stage1">
+    <h2>AGILE 精神，讓計畫趕上變化</h2>
+    <ul>
+      <li>
+        <h3>需求訪談</h3>
+        <p>對客戶安排需求訪談作業，藉此進行蒐集、規劃，以確保工作產出滿足客戶所需。</p>
+      </li>
+      <li>
+        <h3>現場觀察作業流程</h3>
+        <p>至工作現場反覆觀察，瞭解使用者實務流程，最後透過行動裝置優化企業人員之作業步驟。</p>
+      </li>
+      <li>
+        <h3>系統分析</h3>
+        <p>將系統要素綜合分析，找出解決問題的可行方案或方法。並透過一定標準，有效的提出解決方案滿足客戶。</p>
+      </li>
+      <li>
+        <h3>UI/UX 設計</h3>
+        <p>我們不僅關注於介面設計，更關心影響使用者的資訊架構、互動、認知、經驗與價值觀。不僅美化，並將操作體驗更臻完美。</p>
+      </li>
+    </ul>
+  </div>
+</section>
+<section class="promise">
+    <article>
+        <div class="img">
+            <img src="./assets/img/ic_commitment@2x.png">
+        </div>
+        <div class="word">
+          <h2>我們承諾：</h2>
+          <ul>
+            <li *ngFor="let item of promiseList">{{ item }}</li>
+          </ul>
+        </div>
+    </article>
+</section>
+<app-contact></app-contact>
+<app-fixed-page></app-fixed-page>
