@@ -3,11 +3,11 @@ iconfont Webfont
 */
 @font-face {
 	font-family: 'iconfont';
-	src: url('iconfont.eot?1516843273682');
-	src: url('iconfont.eot?#iefix-1516843273682') format('embedded-opentype'),
-		url('iconfont.woff2?1516843273682') format('woff2'),
-		url('iconfont.woff?1516843273682') format('woff'),
-		url('iconfont.ttf?1516843273682') format('truetype');
+	src: url('iconfont.eot?1517193650871');
+	src: url('iconfont.eot?#iefix-1517193650871') format('embedded-opentype'),
+		url('iconfont.woff2?1517193650871') format('woff2'),
+		url('iconfont.woff?1517193650871') format('woff'),
+		url('iconfont.ttf?1517193650871') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -49,46 +49,82 @@ Glyphs list
 	content: '\ea04';
 }
 
-.icon-ic_cooperation:before {
+.icon-ic_back_end:before {
 	content: '\ea05';
 }
 
-.icon-ic_cycle:before {
+.icon-ic_check_ok:before {
 	content: '\ea06';
 }
 
-.icon-ic_gps:before {
+.icon-ic_code:before {
 	content: '\ea07';
 }
 
-.icon-ic_mail:before {
+.icon-ic_cooperation:before {
 	content: '\ea08';
 }
 
-.icon-ic_management:before {
+.icon-ic_cycle:before {
 	content: '\ea09';
 }
 
-.icon-ic_right_arrow:before {
+.icon-ic_front_end:before {
 	content: '\ea0a';
 }
 
-.icon-ic_signature:before {
+.icon-ic_gps:before {
 	content: '\ea0b';
 }
 
-.icon-ic_statistics:before {
+.icon-ic_mail:before {
 	content: '\ea0c';
 }
 
-.icon-ic_trust_hand:before {
+.icon-ic_mail2:before {
 	content: '\ea0d';
 }
 
-.icon-ic_up:before {
+.icon-ic_management:before {
 	content: '\ea0e';
 }
 
-.icon-icons8-megaphone:before {
+.icon-ic_middle_end:before {
 	content: '\ea0f';
+}
+
+.icon-ic_right_arrow:before {
+	content: '\ea10';
+}
+
+.icon-ic_signature:before {
+	content: '\ea11';
+}
+
+.icon-ic_statistics:before {
+	content: '\ea12';
+}
+
+.icon-ic_test:before {
+	content: '\ea13';
+}
+
+.icon-ic_trust_hand:before {
+	content: '\ea14';
+}
+
+.icon-ic_up:before {
+	content: '\ea15';
+}
+
+.icon-ic_up2:before {
+	content: '\ea16';
+}
+
+.icon-ic_validation:before {
+	content: '\ea17';
+}
+
+.icon-icons8-megaphone:before {
+	content: '\ea18';
 }

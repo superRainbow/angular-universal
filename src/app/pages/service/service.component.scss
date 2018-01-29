@@ -92,22 +92,22 @@
     &:before{
       content: "";
       display: block;
-      width: 400px;
+      width: 300px;
       height: 1px;
       background: #C9C9C9;
       position: absolute;
       top: 12px;
-      left: -420px;
+      left: -310px;
     }
     &:after{
       content: "";
       display: block;
-      width: 400px;
+      width: 300px;
       height: 1px;
       background: #C9C9C9;
       position: absolute;
       top: 12px;
-      right: -420px;
+      right: -310px;
     }
   }
   ul{
@@ -182,6 +182,21 @@
           margin-left: 0px;
         }
       }
+      ol{
+        width: 220px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        li{
+          width: 50%;
+        }
+      }
+      i{
+        width: 190px;
+        height: 190px;
+        font-size: 70px;
+        line-height: 170px;
+      }
     }
   }
   @include phone-width{
@@ -241,7 +256,7 @@
       position: relative;
       padding-left: 20px;
       &:before {
-        content: "\ea0a";
+        content: "\ea10";
         display: inline-block;
         font-family: 'iconfont';
         font-size: 10px;
@@ -295,33 +310,9 @@
       li{
         position: absolute;
         &:first-child{
-          top: -175px;
+          top: -155px;
           left: 50%;
           margin-left: -135px;
-          &:before{
-            content: "";
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: block;
-            position: absolute;
-            bottom: -51px;
-            left: 50%;
-            margin-left: -21px;
-            background: rgba(160,200,32,0.38);
-          }
-          &:after{
-            content: "";
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            display: block;
-            position: absolute;
-            bottom: -40px;
-            left: 50%;
-            margin-left: -8px;
-            background: $theme-green;
-          }
         }
         &:not(:first-child){
           width: 260px;
@@ -368,4 +359,8 @@
       }
     }
   }
+  @include pad-width{
+    display: none;
+  }
+  @include phone-width{}
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener, ElementRef } from '@angular/core';
 
 /**
  * 共用元件：上方 header
@@ -13,7 +13,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   showNav = false;
-  constructor() { }
+  scrollTop = true;
+  navArray = [
+    {
+      name: '服務',
+      url: ''
+    },
+    {
+      name: '案例',
+      url: ''
+    },
+    {
+      name: '關於',
+      url: ''
+    },
+    {
+      name: '聯繫',
+      url: ''
+    }
+  ];
+  constructor(public el: ElementRef) { }
 
   ngOnInit() {
   }
@@ -22,4 +41,13 @@ export class HeaderComponent implements OnInit {
     this.showNav = !this.showNav;
   }
 
+  @HostListener('window:scroll', ['$event'])
+    checkScroll() {
+      const scrollPosition = window.pageYOffset;
+      if (scrollPosition > 0) {
+        this.scrollTop = false;
+      }else {
+        this.scrollTop = true;
+      }
+    }
 }

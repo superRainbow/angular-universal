@@ -7,6 +7,16 @@ header{
   background: rgba(0,111,148,0.85);
   position: fixed;
   z-index: 100;
+  &:after{
+    content:"";
+    display: none;
+    width: 100%;
+    height: 8px;
+    background: rgba(0,111,148,1);
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
   &>section{
     max-width: $pc-media;
     height: 85px;
@@ -14,15 +24,24 @@ header{
     padding: 0 10px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
+    position: relative;
+  }
+  &.top{
+    background: none;
+    &:after{
+      display: block;
+    }
   }
   h1{
-    width: 128px;
+    width: 180px;
     height: 47px;
-    a{
-      span{
-        display: none;
-      }
+    position: absolute;
+    left: 0;
+    top: -10px;
+    img{
+      width: 100%;
+      height: auto;
     }
   }
   nav{
@@ -77,6 +96,12 @@ header{
     background: $theme-light-blue;
     &>section{
       padding: 0 20px;
+    }
+    &.top{
+      background: $theme-light-blue;
+      &:after{
+        display: none;
+      }
     }
     nav{
       .menu{

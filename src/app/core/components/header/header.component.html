@@ -1,9 +1,8 @@
-<header>
+<header [ngClass]="{'top': scrollTop}">
   <section>
     <h1>
       <a routerLink="/service">
-        <span>start sales</span>
-        <img src="./assets/img/ic_star_logo.svg" alt="start sales" style="width:128px;height:47px;">
+        <img src="./assets/img/ic_star_logo_shadow.svg" alt="start sales">
       </a>
     </h1>
     <nav>
@@ -13,10 +12,9 @@
         <label for="click"><span class="burger"></span></label>
       </div>
       <ul [ngClass]="{'animate': showNav}">
-        <li><a>服務</a></li>
-        <li><a>案例</a></li>
-        <li><a>關於</a></li>
-        <li><a>聯繫</a></li>
+        <li *ngFor="let item of navArray">
+          <a>{{item.name}}</a>
+        </li>
       </ul>
     </nav>
   </section>
