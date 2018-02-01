@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-service',
@@ -6,19 +6,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./service.component.scss']
 })
 export class ServiceComponent implements OnInit {
+  stage1Style = '';
+  stage2Config: Object;
+  stage3Config: Object;
+  stage4Config: Object;
+  private stage2Anim: any;
+  private stage3Anim: any;
+  private stage4Anim: any;
 
   adData= [
     {
-      imgKey: './assets/img/img_index_pic1.png',
-      imgSmallKey: './assets/img/img_index_pic1.png'
+      imgKey: './assets/img/img_index_pic1.jpg',
+      imgSmallKey: './assets/img/img_index_pic1.jpg'
     },
     {
-      imgKey: './assets/img/img_index_pic2.png',
-      imgSmallKey: './assets/img/img_index_pic2.png'
+      imgKey: './assets/img/img_index_pic2.jpg',
+      imgSmallKey: './assets/img/img_index_pic2.jpg'
     },
     {
-      imgKey: './assets/img/img_index_pic3.png',
-      imgSmallKey: './assets/img/img_index_pic3.png'
+      imgKey: './assets/img/img_index_pic3.jpg',
+      imgSmallKey: './assets/img/img_index_pic3.jpg'
     }
   ];
   adOptins= {
@@ -84,11 +91,156 @@ export class ServiceComponent implements OnInit {
       ]
     }
   ];
+  stage1List= [
+    {
+      title: '需求訪談',
+      des: '對客戶安排需求訪談作業，藉此進行蒐集、規劃，以確保工作產出滿足客戶所需。'
+    },
+    {
+      title: '現場觀察作業流程',
+      des: '至工作現場反覆觀察，瞭解使用者實務流程，最後透過行動裝置優化企業人員之作業步驟。'
+    },
+    {
+      title: '系統分析',
+      des: '將系統要素綜合分析，找出解決問題的可行方案或方法。並透過一定標準，有效的提出解決方案滿足客戶。'
+    },
+    {
+      title: 'UI/UX 設計',
+      des: '我們不僅關注於介面設計，更關心影響使用者的資訊架構、互動、認知、經驗與價值觀。不僅美化，並將操作體驗更臻完美。'
+    }
+  ];
 
-  constructor() { }
+  stage2Item= {
+    title: '程式開發',
+    des: 'Engineer 工程師依照需求擷取和規格製作，架構設計、邏輯設計、實作程式開發。'
+  };
+  stage3Item= {
+    title: '客戶使用者驗證測試',
+    des: '與客戶和目標使用者以「測試」、「確認」、「驗證」三大步驟一同 Demo 程式。'
+  };
+  stage4Item= {
+    title: '問題討論或變動修改',
+    des: '每一次的循環流程'
+  };
+  stage4List= [
+    {
+      class: 'icon-ic_cycle',
+      des: '每次循環（階段）的週期大約兩個禮拜或三個禮拜。'
+    },
+    {
+      class: 'icon-ic_trust_hand',
+      des: '客戶團隊和開發團隊彼此信任和融入。'
+    },
+    {
+      class: 'icon-ic_cooperation',
+      des: '與客戶合作，正向回應開發過程中的任何變動。'
+    }
+  ];
+  stage5Item= {
+    title: 'Release 並進入下個階段',
+    des: '完成並進入下一個工作階段或是工作順序，階段循環直到專案完成。'
+  };
+
+  constructor(public el: ElementRef) {
+    this.stage2Config = {
+      path: '/assets/json/Circle_step01.json',
+      autoplay: false,
+      loop: false
+    };
+    this.stage3Config = {
+      path: '/assets/json/Circle_step02.json',
+      autoplay: false,
+      loop: false
+    };
+    this.stage4Config = {
+      path: '/assets/json/Circle_step03.json',
+      autoplay: false,
+      loop: false
+    };
+  }
 
   ngOnInit() {
     window.scrollTo(0, 0);
+    this.initAnimation();
+  }
+
+  changeBg(i) {
+    this.stage1Style = 'stage1Bg-' + i;
+  }
+
+  getCSSClasses() {
+    return this.stage1Style;
+  }
+
+  @HostListener('window:scroll', ['$event'])
+  checkScroll() {
+    const $animation_elements = $('.animation');
+    const stage2 = $(this.el.nativeElement).find('.stage2');
+    const stage3 = $(this.el.nativeElement).find('.stage3');
+    const stage4 = $(this.el.nativeElement).find('.stage4');
+    const window_top_position = $(window).scrollTop();
+    const window_bottom_position = ($(window).height() + $(window).scrollTop());
+
+    if ((window_top_position + 900) >= stage2.offset().top) {
+    // if (((stage2.offset().top + stage2.outerHeight()) >= window_top_position) && (stage2.offset().top <= window_bottom_position)) {
+      this.stage2Anim.play();
+    }
+    if ((window_top_position + 900) >= stage3.offset().top) {
+      this.stage3Anim.play();
+    }
+    if ((window_top_position + 900) >= stage4.offset().top) {
+      this.stage4Anim.play();
+    }
+
+    $.each($animation_elements, function() {
+      const $element = $(this);
+      const element_height = $element.outerHeight();
+      const element_top_position = $element.offset().top;
+      const element_bottom_position = (element_top_position + element_height);
+
+      if ((element_bottom_position >= window_top_position) && (element_top_position <= window_bottom_position)) {
+        $element.addClass('show');
+      }
+    });
+  }
+
+  initAnimation() {
+
+    // this.stage2Animate = lottie.loadAnimation({
+    //   container: document.getElementById('bodymovin-1'),
+    //   renderer: 'svg',
+    //   loop: false,
+    //   autoplay: false,
+    //   path: '/assets/json/Circle_step01.json'
+    // });
+    // this.stage3Animate = lottie.loadAnimation({
+    //   container: document.getElementById('bodymovin-2'),
+    //   renderer: 'svg',
+    //   loop: false,
+    //   autoplay: false,
+    //   path: '/assets/json/Circle_step02.json'
+    // });
+    // this.stage4Animate = lottie.loadAnimation({
+    //   container: document.getElementById('bodymovin-3'),
+    //   renderer: 'svg',
+    //   loop: false,
+    //   autoplay: false,
+    //   path: '/assets/json/Circle_step03.json'
+    // });
+  }
+
+  handleAnimation(target, anim: any) {
+    switch (target) {
+      case 'stage2':
+        this.stage2Anim = anim;
+        break;
+      case 'stage3':
+        this.stage3Anim = anim;
+        break;
+      case 'stage4':
+        this.stage4Anim = anim;
+        break;
+    }
   }
 
 }

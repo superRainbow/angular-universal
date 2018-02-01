@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
+import { LottieAnimationViewModule } from 'ng-lottie';
+
 import { CoreModule } from '../core/core.module';
 
 import { PagesRoutingModule } from './pages-routing.module';
@@ -14,7 +16,8 @@ import { ServiceComponent } from './service/service.component';
     CommonModule,
     RouterModule,
     CoreModule,
-    PagesRoutingModule
+    PagesRoutingModule,
+    LottieAnimationViewModule.forRoot()
   ],
   declarations: [
     MainComponent,

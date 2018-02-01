@@ -1,3 +1,10 @@
+// 電腦與平板
+@mixin pc-pad-width() {
+  @media all and (min-width: $pad-media) {
+    @content;
+  }
+}
+
 // 電腦
 @mixin pc-width() {
   @media all and (min-width: $pc-media) {

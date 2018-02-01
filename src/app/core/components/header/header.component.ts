@@ -42,12 +42,12 @@ export class HeaderComponent implements OnInit {
   }
 
   @HostListener('window:scroll', ['$event'])
-    checkScroll() {
-      const scrollPosition = window.pageYOffset;
-      if (scrollPosition > 0) {
-        this.scrollTop = false;
-      }else {
-        this.scrollTop = true;
-      }
+  checkScroll() {
+    const scrollPosition = window.pageYOffset;
+    if (scrollPosition > 0) {
+      this.scrollTop = false;
+    }else {
+      this.scrollTop = true;
     }
+  }
 }

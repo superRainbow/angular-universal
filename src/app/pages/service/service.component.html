@@ -29,29 +29,93 @@
     </article>
 </section>
 <section class="process">
-  <div class="stage1">
-    <h2>AGILE 精神，讓計畫趕上變化</h2>
+  <div class="stage1" [ngClass]="getCSSClasses()">
+    <h2 class="animation delay-0">AGILE 精神，讓計畫趕上變化</h2>
     <ul>
-      <li>
-        <h3>需求訪談</h3>
-        <p>對客戶安排需求訪談作業，藉此進行蒐集、規劃，以確保工作產出滿足客戶所需。</p>
-      </li>
-      <li>
-        <h3>現場觀察作業流程</h3>
-        <p>至工作現場反覆觀察，瞭解使用者實務流程，最後透過行動裝置優化企業人員之作業步驟。</p>
-      </li>
-      <li>
-        <h3>系統分析</h3>
-        <p>將系統要素綜合分析，找出解決問題的可行方案或方法。並透過一定標準，有效的提出解決方案滿足客戶。</p>
-      </li>
-      <li>
-        <h3>UI/UX 設計</h3>
-        <p>我們不僅關注於介面設計，更關心影響使用者的資訊架構、互動、認知、經驗與價值觀。不僅美化，並將操作體驗更臻完美。</p>
+      <li class="animation" [ngClass]="'delay-'+ i" *ngFor="let item of stage1List;let i = index;" (click)="changeBg(i)">
+        <h3>{{item.title}}</h3>
+        <p>{{item.des}}</p>
       </li>
     </ul>
   </div>
   <div class="stage2">
-
+    <section>
+      <lottie-animation-view
+        [options]="stage2Config"
+        (animCreated)="handleAnimation('stage2', $event)">
+      </lottie-animation-view>
+      <div class="macbook">
+        <div class="mobile animation"></div>
+        <div class="pc">
+            <div class="macbook-body animation delay-0"></div>
+            <div class="macbook-one animation delay-1"></div>
+            <div class="macbook-two animation delay-2"></div>
+            <ul>
+              <li class="animation delay-3"><i class="icon-ic_front_end"></i></li>
+              <li class="animation delay-4"><i class="icon-ic_middle_end"></i></li>
+              <li class="animation delay-5"><i class="icon-ic_back_end"></i></li>
+            </ul>
+        </div>
+      </div>
+      <div class="word animation delay-6">
+        <h3>{{stage2Item.title}}</h3>
+        <p>{{stage2Item.des}}</p>
+      </div>
+    </section>
+  </div>
+  <div class="stage3">
+    <section>
+      <lottie-animation-view
+        [options]="stage3Config"
+        (animCreated)="handleAnimation('stage3', $event)">
+      </lottie-animation-view>
+      <div class="pad">
+        <div class="mobile animation"></div>
+        <div class="pc">
+          <div class="body animation delay-0"></div>
+          <ul>
+            <li class="animation delay-1"><i class="icon-ic_test"></i></li>
+            <li class="animation delay-2"><i class="icon-ic_validation"></i></li>
+            <li class="animation delay-3"><i class="icon-ic_check_ok"></i></li>
+          </ul>
+        </div>
+      </div>
+      <div class="word animation delay-4">
+        <h3>{{stage3Item.title}}</h3>
+        <p>{{stage3Item.des}}</p>
+      </div>
+    </section>
+  </div>
+  <div class="stage4">
+    <section>
+      <lottie-animation-view
+        [options]="stage4Config"
+        (animCreated)="handleAnimation('stage4', $event)">
+      </lottie-animation-view>
+      <div class="word">
+          <h3 class="animation delay-0">{{stage4Item.title}}</h3>
+          <h4 class="animation delay-1">{{stage4Item.des}}</h4>
+          <ul>
+            <li *ngFor="let item of stage4List;let i = index;" class="animation delay-{{i+2}}">
+              <i class="{{item.class}}"></i>
+              <p>{{item.des}}</p>
+            </li>
+          </ul>
+      </div>
+    </section>
+  </div>
+  <div class="stage5">
+    <section>
+      <div class="word">
+        <h3>{{stage5Item.title}}</h3>
+        <p>{{stage5Item.des}}</p>
+      </div>
+      <div class="pad">
+        <div class="layout-1"></div>
+        <div class="layout-1"></div>
+        <div class="layout-1"></div>
+      </div>
+    </section>
   </div>
 </section>
 <section class="promise">
