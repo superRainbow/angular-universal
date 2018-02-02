@@ -3,11 +3,11 @@ iconfont Webfont
 */
 @font-face {
 	font-family: 'iconfont';
-	src: url('iconfont.eot?1517193650871');
-	src: url('iconfont.eot?#iefix-1517193650871') format('embedded-opentype'),
-		url('iconfont.woff2?1517193650871') format('woff2'),
-		url('iconfont.woff?1517193650871') format('woff'),
-		url('iconfont.ttf?1517193650871') format('truetype');
+	src: url('iconfont.eot?1517471198321');
+	src: url('iconfont.eot?#iefix-1517471198321') format('embedded-opentype'),
+		url('iconfont.woff2?1517471198321') format('woff2'),
+		url('iconfont.woff?1517471198321') format('woff'),
+		url('iconfont.ttf?1517471198321') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -125,6 +125,30 @@ Glyphs list
 	content: '\ea17';
 }
 
-.icon-icons8-megaphone:before {
+.icon-ico_address:before {
 	content: '\ea18';
+}
+
+.icon-ico_answer_green:before {
+	content: '\ea19';
+}
+
+.icon-ico_budget:before {
+	content: '\ea1a';
+}
+
+.icon-ico_fax:before {
+	content: '\ea1b';
+}
+
+.icon-ico_sales:before {
+	content: '\ea1c';
+}
+
+.icon-ico_telphone:before {
+	content: '\ea1d';
+}
+
+.icon-icons8-megaphone:before {
+	content: '\ea1e';
 }

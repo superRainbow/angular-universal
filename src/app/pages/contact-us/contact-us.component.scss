@@ -1,0 +1,213 @@
+@import "~assets/scss/helpers/index";
+@import "~assets/scss/layout/index";
+
+.parallax-core{
+  background-image: url('/assets/img/img_contact_us.jpg');
+  h2{
+  }
+}
+
+.parallax-content {
+}
+
+.content{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 80px 20px 0;
+  position: relative;
+  h3{
+    font-size: 24px;
+    color: #018FB5;
+  }
+  .form{
+    width: 360px;
+    height: 1250px;
+    padding-bottom: 250px;
+    h3{
+      padding-bottom: 25px;
+      position: relative;
+    }
+    .custom-select{
+      margin-bottom: 25px;
+    }
+    .budget-radio{
+      .radio-area{
+        display: block;
+        padding: 20px 0;
+        border-top: 1px solid #EBEBEB;
+      }
+    }
+    .text-area{
+      width: 100%;
+      max-width: 1024px;
+      padding: 0 20px;
+      position: absolute;
+      left: 0;
+      top: 1050px;
+      text-align: center;
+      textarea{
+        font-size: 18px;
+        border: 1px solid #D0D0D0;
+        border-radius: 3px;
+        width: 100%;
+        min-width: 100%;
+        max-width: 100%;
+        height: 120px;
+        min-height: 120px;
+        max-height: 120px;
+        padding: 15px;
+      }
+    }
+    .btn{
+      width: 290px;
+      height: 75px;
+      padding: 20px;
+      display: block;
+      text-align: center;
+      border-radius: 3px;
+      background: #018FB5;
+      margin: 0 auto;
+      position: relative;
+      text-align: center;
+      span{
+        font-size: 26px;
+        color: #FFFFFF;
+      }
+      .submit{
+        position: absolute;
+        top: -5px;
+        left: 0;
+      }
+    }
+  }
+  .company{
+    width: 540px;
+    height: 1250px;
+    padding-bottom: 250px;
+    .company-map{
+      margin-bottom: 40px;
+      border: 1px solid #D0D0D0;
+      border-radius: 3px;
+      iframe{
+        display: block;
+        width: 538px;
+        height: 558px;
+      }
+    }
+    .company-data{
+      color: #3D3D3D;
+      font-size: 17px;
+      h4{
+        font-size: 23px;
+        margin-bottom: 25px;
+      }
+      ul{
+        li{
+          line-height: 35px;
+        }
+        i{
+          width: 18px;
+          color: #cccccc;
+          &.icon-ico_fax, &.icon-ico_sales{
+            text-indent: -4px;
+            margin-right: 4px;
+          }
+        }
+        div, span{
+          display: inline-block;
+          vertical-align: top;
+        }
+      }
+    }
+  }
+  .qa{
+    width: 100%;
+    padding: 60px 0;
+    background: #F2F5F6;
+    position: relative;
+    &:before{
+      content: "";
+      display: block;
+      background: #F2F5F6;
+      width: 600%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: -300%;
+      z-index: -1;
+    }
+    h3{
+      font-size: 30px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+  }
+  @include pad-width{
+    .form{
+      flex:1;
+    }
+    .company{
+      width: 360px;
+      margin-left: 40px;
+      .company-map{
+        iframe{
+          width: 358px;
+        }
+      }
+    }
+  }
+  @include phone-width{
+    padding: 0;
+    .form{
+      padding: 0 20px;
+      h3{
+        padding: 25px 0;
+        background: #F2F5F6;
+        &:before{
+          content: "";
+          display: block;
+          background: #F2F5F6;
+          width: 120%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: -20px;
+          z-index: -1;
+        }
+      }
+      .custom-select{
+        margin: 0;
+      }
+    }
+    .company{
+      background: #F2F5F6;
+      padding: 60px 20px;
+      height: inherit;
+      .company-map{
+        iframe{
+          width: 100%;
+        }
+      }
+      .company-data{
+        h4{
+          font-size: 16px;
+        }
+        ul{
+          font-size: 14px;
+          i{
+            color: $theme-light-blue;
+          }
+        }
+      }
+    }
+    .qa{
+      padding: 60px 20px;
+      background: #ffffff;
+      h3{
+        font-size: 18px;
+        margin-bottom: 15px;
+      }
+    }
+  }
+}

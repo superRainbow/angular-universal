@@ -1,0 +1,9 @@
+<div class="qa-area">
+  <div class="panel" *ngFor="let item of qaData;let idx = index;">
+    <div class="panel-header" [class.active]="item.opened" (click)="toggle(item,idx)">
+      <i class="panel-number" [class.active]="item.opened">{{idx+1}}</i>
+      <span>{{item.title}}</span>
+    </div>
+    <div class="panel-block" [ngClass]="{hide: !item.opened}" [innerHTML]="trustContent(item.content)"></div>
+  </div>
+</div>
