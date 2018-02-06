@@ -7,6 +7,12 @@ import {
   transition
 } from '@angular/animations';
 
+/**
+ * 共用元件：網頁下方的聯繫元件
+ * @export
+ * @class ContactComponent
+ * @implements {OnInit}
+ */
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
@@ -20,6 +26,9 @@ export class ContactComponent implements OnInit {
   ngOnInit() {
   }
 
+  /**
+   * windeow scroll 監視
+   */
   @HostListener('window:scroll', ['$event'])
   checkScroll() {
     const componentPosition = this.el.nativeElement.offsetTop;

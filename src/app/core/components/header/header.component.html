@@ -8,12 +8,14 @@
     <nav>
       <!-- <a class="menu">選單</a> -->
       <div class="menu">
-        <input id="click" name="exit" type="checkbox" (click)="showMenu()" />
+        <input #menu id="click" name="exit" type="checkbox" (click)="showMenu()" />
         <label for="click"><span class="burger"></span></label>
       </div>
       <ul [ngClass]="{'animate': showNav}">
         <li *ngFor="let item of navArray">
-          <a>{{item.name}}</a>
+          <a (click)="goPage(item.url)" routerLinkActive="active">
+            <p>{{item.name}}</p>
+          </a>
         </li>
       </ul>
     </nav>

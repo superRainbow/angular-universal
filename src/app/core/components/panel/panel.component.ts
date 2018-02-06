@@ -3,6 +3,8 @@ import { DomSanitizer } from '@angular/platform-browser';
 
 /**
  * 共用元件：開闔元件
+ * @export
+ * @class PanelComponent
  */
 @Component({
   selector: 'app-panel',

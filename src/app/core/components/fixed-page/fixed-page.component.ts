@@ -8,6 +8,12 @@ import {
   transition
 } from '@angular/animations';
 
+/**
+ * 共用元件：右下方的捷徑元件
+ * @export
+ * @class FixedPageComponent
+ * @implements {OnInit}
+ */
 @Component({
   selector: 'app-fixed-page',
   templateUrl: './fixed-page.component.html',
@@ -22,12 +28,18 @@ export class FixedPageComponent implements OnInit {
   ngOnInit() {
   }
 
+  /**
+   * 導頁
+   * @param url
+   */
   getRouterLink(url) {
     this.router.navigate([url]);
   }
 
+  /**
+   * 滑到最上方動畫
+   */
   scrollTop() {
-    // window.scrollTo(0, 0);
     $('body, html').animate({'scrollTop' : 0}, 500);
   }
 

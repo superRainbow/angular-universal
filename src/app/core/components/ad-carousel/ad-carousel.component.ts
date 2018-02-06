@@ -96,7 +96,6 @@ export class AdCarouselComponent implements OnInit, AfterViewInit, AfterViewChec
 
   /**
    * 使用者按下輪播項目
-   *
    * @param {any} item
    */
   doLink(item) {

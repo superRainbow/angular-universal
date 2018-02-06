@@ -1,4 +1,5 @@
-import { Component, OnInit, HostListener, ElementRef } from '@angular/core';
+import { Component, OnInit, HostListener, ElementRef, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 
 /**
  * 共用元件：上方 header
@@ -12,35 +13,45 @@ import { Component, OnInit, HostListener, ElementRef } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  @ViewChild('menu') menu;
+
   showNav = false;
   scrollTop = true;
   navArray = [
     {
       name: '服務',
-      url: ''
+      url: '/service'
     },
     {
       name: '案例',
-      url: ''
+      url: '/eee'
     },
     {
       name: '關於',
-      url: ''
+      url: '/www'
     },
     {
       name: '聯繫',
-      url: ''
+      url: '/contact-us'
     }
   ];
-  constructor(public el: ElementRef) { }
+  constructor(
+    public el: ElementRef,
+    private router: Router
+  ) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
+  /**
+   * 顯示小版 menu
+   */
   showMenu() {
     this.showNav = !this.showNav;
   }
 
+  /**
+   * windeow scroll 監視
+   */
   @HostListener('window:scroll', ['$event'])
   checkScroll() {
     const scrollPosition = window.pageYOffset;
@@ -49,5 +60,15 @@ export class HeaderComponent implements OnInit {
     }else {
       this.scrollTop = true;
     }
+  }
+
+  /**
+   * 轉頁
+   * @param url
+   */
+  goPage(url) {
+    this.router.navigate([url]);
+    this.showMenu();
+    this.menu.nativeElement.checked = !this.menu.nativeElement.checked;
   }
 }

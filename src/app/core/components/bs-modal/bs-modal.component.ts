@@ -60,7 +60,6 @@ export class BSModalComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
-
     this.modalAlertSubscription = this.bsModalService.showModalAlert$.subscribe(
       (options) => {
         this.bsModalService.notifyModalOpen({

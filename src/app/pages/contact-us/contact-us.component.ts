@@ -4,7 +4,14 @@ import { FormBuilder, FormGroup, Validators, FormControl, ValidationErrors } fro
 import { CustomValidators } from 'ng2-validation';
 
 import { BSModalService } from '../../core/components/bs-modal/bs-modal.service';
+import { WindowUtils } from '../../core/utils/window-utils.service';
 
+/**
+ * 聯繫頁面
+ * @export
+ * @class ContactUsComponent
+ * @implements {OnInit}
+ */
 @Component({
   selector: 'app-contact-us',
   templateUrl: './contact-us.component.html',
@@ -57,10 +64,12 @@ export class ContactUsComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private bsModalService: BSModalService
+    private bsModalService: BSModalService,
+    private window: WindowUtils
   ) {}
 
   ngOnInit() {
+    this.window.scrollTop();
     this.buildForm();
   }
 

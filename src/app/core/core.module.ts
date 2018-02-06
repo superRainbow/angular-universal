@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 import { Ng2Bs3ModalModule } from 'ng2-bs3-modal/ng2-bs3-modal';
 
@@ -23,6 +24,7 @@ const components = [
 @NgModule({
   imports: [
     CommonModule,
+    RouterModule,
     Ng2Bs3ModalModule
   ],
   declarations: [

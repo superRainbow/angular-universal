@@ -1,5 +1,13 @@
 import { Component, OnInit, HostListener, ElementRef } from '@angular/core';
 
+import { WindowUtils } from '../../core/utils/window-utils.service';
+
+/**
+ * 服務頁面
+ * @export
+ * @class ServiceComponent
+ * @implements {OnInit}
+ */
 @Component({
   selector: 'app-service',
   templateUrl: './service.component.html',
@@ -141,37 +149,29 @@ export class ServiceComponent implements OnInit {
     des: '完成並進入下一個工作階段或是工作順序，階段循環直到專案完成。'
   };
 
-  constructor(public el: ElementRef) {
-    this.stage2Config = {
-      path: '/assets/json/Circle_step01.json',
-      autoplay: false,
-      loop: false
-    };
-    this.stage3Config = {
-      path: '/assets/json/Circle_step02.json',
-      autoplay: false,
-      loop: false
-    };
-    this.stage4Config = {
-      path: '/assets/json/Circle_step03.json',
-      autoplay: false,
-      loop: false
-    };
-  }
-
-  ngOnInit() {
-    window.scrollTo(0, 0);
+  constructor(
+    private el: ElementRef,
+    private window: WindowUtils
+  ) {
     this.initAnimation();
   }
 
+  ngOnInit() {
+    this.window.scrollTop();
+    this.initAnimation();
+  }
+
+  /**
+   * 改變背景 style
+   * @param i
+   */
   changeBg(i) {
     this.stage1Style = 'stage1Bg-' + i;
   }
 
-  getCSSClasses() {
-    return this.stage1Style;
-  }
-
+  /**
+   * windeow scroll 監視
+   */
   @HostListener('window:scroll', ['$event'])
   checkScroll() {
     const $animation_elements = $('.animation');
@@ -204,31 +204,32 @@ export class ServiceComponent implements OnInit {
     });
   }
 
+  /**
+   * 初始化動畫
+   */
   initAnimation() {
-
-    // this.stage2Animate = lottie.loadAnimation({
-    //   container: document.getElementById('bodymovin-1'),
-    //   renderer: 'svg',
-    //   loop: false,
-    //   autoplay: false,
-    //   path: '/assets/json/Circle_step01.json'
-    // });
-    // this.stage3Animate = lottie.loadAnimation({
-    //   container: document.getElementById('bodymovin-2'),
-    //   renderer: 'svg',
-    //   loop: false,
-    //   autoplay: false,
-    //   path: '/assets/json/Circle_step02.json'
-    // });
-    // this.stage4Animate = lottie.loadAnimation({
-    //   container: document.getElementById('bodymovin-3'),
-    //   renderer: 'svg',
-    //   loop: false,
-    //   autoplay: false,
-    //   path: '/assets/json/Circle_step03.json'
-    // });
+    this.stage2Config = {
+      path: '/assets/json/Circle_step01.json',
+      autoplay: false,
+      loop: false
+    };
+    this.stage3Config = {
+      path: '/assets/json/Circle_step02.json',
+      autoplay: false,
+      loop: false
+    };
+    this.stage4Config = {
+      path: '/assets/json/Circle_step03.json',
+      autoplay: false,
+      loop: false
+    };
   }
 
+  /**
+   * 處理動畫
+   * @param target 場景
+   * @param anim
+   */
   handleAnimation(target, anim: any) {
     switch (target) {
       case 'stage2':
