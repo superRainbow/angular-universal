@@ -32,7 +32,7 @@
   <div class="stage1" [ngClass]="stage1Style">
     <h2 class="animation delay-0">AGILE 精神，讓計畫趕上變化</h2>
     <ul>
-      <li class="animation" [ngClass]="'delay-'+ i" *ngFor="let item of stage1List;let i = index;" (click)="changeBg(i)">
+      <li class="animation" [ngClass]="'delay-'+ i" *ngFor="let item of stage1List;let i = index;" (click)="changeBg(i)" (mouseenter) ="changeBg(i)">
         <h3>{{item.title}}</h3>
         <p>{{item.des}}</p>
       </li>
