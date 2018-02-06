@@ -9,15 +9,14 @@ import { CoreModule } from '../core/core.module';
 
 import { PagesRoutingModule } from './pages-routing.module';
 
+import { SharedModule } from './shared/shared.module';
 import { MainComponent } from './main/main.component';
 import { ServiceComponent } from './service/service.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 
 @NgModule({
   imports: [
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
+    SharedModule,
     RouterModule,
     CoreModule,
     PagesRoutingModule,

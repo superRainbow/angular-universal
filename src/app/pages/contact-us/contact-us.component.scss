@@ -20,6 +20,27 @@
     font-size: 24px;
     color: #018FB5;
   }
+  .input-effect{
+    &.showError.required{
+      input{
+        border-bottom: 2px solid #FF6C6C;
+        &~ .focus-border{
+          background-color: #FF6C6C;
+        }
+      }
+      label{
+        color: #FF6C6C;
+      }
+    }
+    p{
+      display: none;
+      color: #FF6C6C;
+      margin: 5px 0;
+      &.showError.required{
+        display: block;
+      }
+    }
+  }
   .form{
     width: 360px;
     height: 1250px;
@@ -30,6 +51,22 @@
     }
     .custom-select{
       margin-bottom: 25px;
+      &.showError.required{
+        &>div{
+          border-bottom: 2px solid #FF6C6C;
+          &:after {
+            border-color: #FF6C6C transparent transparent transparent;
+          }
+        }
+        p{
+          display: block;
+        }
+      }
+      p{
+        display: none;
+        color: #FF6C6C;
+        margin: 5px 0;
+      }
     }
     .budget-radio{
       .radio-area{
@@ -57,27 +94,48 @@
         min-height: 120px;
         max-height: 120px;
         padding: 15px;
+        margin-bottom: 35px;
+        &.showError.required{
+          border: 2px solid #FF6C6C;
+        }
       }
     }
     .btn{
       width: 290px;
-      height: 75px;
-      padding: 20px;
-      display: block;
-      text-align: center;
-      border-radius: 3px;
-      background: #018FB5;
-      margin: 0 auto;
+      overflow: hidden;
       position: relative;
-      text-align: center;
       span{
-        font-size: 26px;
-        color: #FFFFFF;
+        display: block;
+        text-indent: 60px;
       }
-      .submit{
+      i{
         position: absolute;
-        top: -5px;
-        left: 0;
+        top: -3px;
+        left: 50%;
+        font-size: 40px;
+      }
+      .icon-ico_sent_data{
+        margin-left: -60px;
+      }
+      .icon-ico_sent_ok{
+        opacity: 0;
+        margin-left: -40px;
+      }
+      &.showAnimate{
+        background: #018FB5;
+        animation: bg 1s cubic-bezier(0.27,0.53,0.28,1.58) forwards;
+        animation-delay: 0.7s;
+        .icon-ico_sent_data{
+          transform: translateX(0px) scale(1);
+          animation: move-left 0.5s cubic-bezier(0.27,0.53,0.28,1.58) forwards;
+          animation-delay: 0.1s;
+        }
+        .icon-ico_sent_ok{
+          transform: translateY(-5px) scale(0);
+          transform-origin: 50%;
+          animation: go-top 0.5s cubic-bezier(0.27,0.53,0.28,1.58) forwards;
+          animation-delay: 1.2s;
+        }
       }
     }
   }
@@ -160,6 +218,7 @@
   @include phone-width{
     padding: 0;
     .form{
+      width: 100%;
       padding: 0 20px;
       h3{
         padding: 25px 0;
@@ -178,6 +237,10 @@
       }
       .custom-select{
         margin: 0;
+      }
+      .text-area{
+        position: static;
+        padding: 0;
       }
     }
     .company{
@@ -210,4 +273,19 @@
       }
     }
   }
+}
+
+@keyframes move-left {
+  0% { transform: translateX(0px) scale(1)}
+  100% { transform: translateX(-200px) scale(1)}
+}
+
+@keyframes bg {
+  from {background: #018FB5;}
+  to {background: #7EB70B;}
+}
+
+@keyframes go-top {
+  0% { transform: translateY(-10px) scale(0); opacity: 0; }
+  100% { transform: translateY(0px) scale(1); opacity: 1; }
 }

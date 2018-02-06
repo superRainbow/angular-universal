@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl, ValidationErrors } from '@angular/forms';
 
 import { CustomValidators } from 'ng2-validation';
+
+import { BSModalService } from '../../core/components/bs-modal/bs-modal.service';
 
 @Component({
   selector: 'app-contact-us',
@@ -9,11 +11,8 @@ import { CustomValidators } from 'ng2-validation';
   styleUrls: ['./contact-us.component.scss']
 })
 export class ContactUsComponent implements OnInit {
-  submitConfig: Object;
-  errorConfig: Object;
-  private submitAnim: any;
-  private errorAnim: any;
-  isclick = false;
+  showError = false;
+  showAnimate = false;
   form: FormGroup;
   requirementArray = [
     '企業行動應用諮詢',
@@ -57,10 +56,9 @@ export class ContactUsComponent implements OnInit {
   ];
 
   constructor(
-    private fb: FormBuilder
-  ) {
-    this.initAnimate();
-  }
+    private fb: FormBuilder,
+    private bsModalService: BSModalService
+  ) {}
 
   ngOnInit() {
     this.buildForm();
@@ -75,9 +73,9 @@ export class ContactUsComponent implements OnInit {
       email: [null, [CustomValidators.email, Validators.required]],
       company: [null, [Validators.required]],
       part: '',
-      tel: ['', [CustomValidators.phone('zh-TW')]],
+      tel: ['', [Validators.required, CustomValidators.number]],
       requirement: [null, [Validators.required]],
-      budget: [null, [Validators.required]],
+      budget: [0, [Validators.required]],
       description: [null, [Validators.required]]
     });
   }
@@ -95,34 +93,34 @@ export class ContactUsComponent implements OnInit {
   }
 
 
+  /**
+   * 按下送出
+   */
   getFormData() {
     console.log('this.form', this.form.value);
-    this.isclick = true;
-    this.submitAnim.play();
-  }
-
-  initAnimate() {
-    this.submitConfig = {
-      path: '/assets/json/btn_motion_submit.json',
-      autoplay: false,
-      loop: false
-    };
-    this.errorConfig = {
-      path: '/assets/json/btn_motion_error.json',
-      autoplay: false,
-      loop: false
-    };
-  }
-
-  handleAnimation(target, anim: any) {
-    switch (target) {
-      case 'submit':
-        this.submitAnim = anim;
-        break;
-      case 'error':
-        this.errorAnim = anim;
-        break;
+    if (this.form.invalid) {
+      this.openError();
+    }else {
+      this.showAnimate = true;
+      setTimeout(() => {
+        this.showAnimate = false;
+      }, 4000);
     }
   }
+
+  /**
+   * 跳出錯誤modal
+   */
+  openError() {
+    this.bsModalService.notifyShowModalAlert({
+      title: '提醒您',
+      msg: '資料尚未填妥喔！',
+      icon: 'icon-ico_error',
+      cancelBtn: false,
+      callback: () => {
+        this.showError = true;
+      }
+    });
+  };
 
 }

@@ -10,36 +10,51 @@
               <i class="icon-ic_mail2"></i>
               <span>Contact Us / 聯絡我們</span>
             </h3>
-            <div class="input-effect">
-              <input type="text" id="name" formControlName="name" (change)="inputChange($event)">
-              <label>聯絡人姓名</label>
-              <span class="focus-border"></span>
+            <div class="input-effect" [ngClass]="{'required':!form.get('name').valid, 'showError': showError}">
+              <div>
+                  <input type="text" id="name" formControlName="name" (change)="inputChange($event)">
+                  <label>聯絡人姓名</label>
+                  <span class="focus-border"></span>
+              </div>
+            </div>
+            <div class="input-effect" [ngClass]="{'required':!form.get('email').valid, 'showError': showError}">
+              <div>
+                  <input type="text" id="email" formControlName="email" (change)="inputChange($event)">
+                  <label>e-mail</label>
+                  <span class="focus-border"></span>
+              </div>
+              <p [ngClass]="{'required':!form.get('email').valid, 'showError': showError}">電子郵件格式有誤</p>
+            </div>
+            <div class="input-effect" [ngClass]="{'required':!form.get('company').valid, 'showError': showError}">
+              <div>
+                  <input type="text" id="company" formControlName="company" (change)="inputChange($event)">
+                  <label>公司名稱</label>
+                  <span class="focus-border"></span>
+              </div>
             </div>
             <div class="input-effect">
-              <input type="text" id="email" formControlName="email" (change)="inputChange($event)">
-              <label>e-mail</label>
-              <span class="focus-border"></span>
+              <div>
+                  <input type="text" id="part" formControlName="part" (change)="inputChange($event)">
+                  <label>部門職稱</label>
+                  <span class="focus-border"></span>
+              </div>
             </div>
-            <div class="input-effect">
-              <input type="text" id="company" formControlName="company" (change)="inputChange($event)">
-              <label>公司名稱</label>
-              <span class="focus-border"></span>
+            <div class="input-effect" [ngClass]="{'required':!form.get('tel').valid, 'showError': showError}">
+              <div>
+                  <input type="text" id="tel" formControlName="tel" (change)="inputChange($event)">
+                  <label>電話</label>
+                  <span class="focus-border"></span>
+              </div>
+              <p [ngClass]="{'required':!form.get('tel').valid, 'showError': showError}">電話 / 手機號碼格式錯誤</p>
             </div>
-            <div class="input-effect">
-              <input type="text" id="part" formControlName="part" (change)="inputChange($event)">
-              <label>部門職稱</label>
-              <span class="focus-border"></span>
-            </div>
-            <div class="input-effect">
-              <input type="text" id="tel" formControlName="tel" (change)="inputChange($event)">
-              <label>電話</label>
-              <span class="focus-border"></span>
-            </div>
-            <div class="custom-select">
-              <select formControlName="requirement">
-                <option [ngValue]="null">需求服務內容</option>
-                <option *ngFor="let item of requirementArray;let i = index;" [ngValue]="i">{{item}}</option>
-              </select>
+            <div class="custom-select" [ngClass]="{'required':!form.get('requirement').valid, 'showError': showError}">
+              <div>
+                <select formControlName="requirement">
+                  <option [ngValue]="null">需求服務內容</option>
+                  <option *ngFor="let item of requirementArray;let i = index;" [ngValue]="i">{{item}}</option>
+                </select>
+              </div>
+              <p>需求服務內容為必填</p>
             </div>
             <h3>
               <i class="icon-ico_budget"></i>
@@ -54,19 +69,11 @@
               </div>
             </div>
             <div class="text-area">
-              <textarea formControlName="description" placeholder="服務需求或說明"></textarea>
-              <a class="btn" (click)="getFormData()">
-                <span [hidden]="isclick">送出</span>
-                <lottie-animation-view
-                  class="submit"
-                  [style.visibility]="isclick ? 'visible' : 'hidden'"
-                  [options]="submitConfig"
-                  (animCreated)="handleAnimation('submit', $event)">
-                </lottie-animation-view>
-                <!-- <lottie-animation-view
-                  [options]="errorConfig"
-                  (animCreated)="handleAnimation('error', $event)">
-                </lottie-animation-view> -->
+              <textarea formControlName="description" placeholder="服務需求或說明" [ngClass]="{'required':!form.get('description').valid, 'showError': showError}"></textarea>
+              <a class="btn" [ngClass]="{'showAnimate': showAnimate}" (click)="getFormData()">
+                <i class="icon-ico_sent_data"></i>
+                <i class="icon-ico_sent_ok"></i>
+                <span>送出</span>
               </a>
             </div>
           </form>

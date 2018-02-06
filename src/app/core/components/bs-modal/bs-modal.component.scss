@@ -1,0 +1,59 @@
+@import "~assets/scss/helpers/index";
+$imgPath : "/assets/img";
+
+//  modal
+.modal-backdrop{
+  background: rgba(13,28,42,1);
+  &.in{
+    opacity: 0.75;
+  }
+}
+
+.modal-dialog{
+  width: 80%;
+  max-width: 480px;
+  margin: 15% auto;
+}
+
+.basic-modal{
+  .modal-content{
+    border:none;
+    box-shadow: 0 0 50px 0 rgba(0,0,0,0.50);
+    text-align: center;
+    font-size: 24px;
+    color: #3D3D3D;
+  }
+  .modal-header{
+    background: #EDEDED;
+    color: #8E8E8E;
+    padding: 25px 25px;
+    border-radius: 9.6px 9.6px 0 0;
+    border-bottom: none;
+    position: relative;
+    .close{
+      background: transparent;
+      position: absolute;
+      right: 25px;
+      top: 3px;
+      font-size: 50px;
+      color: #018FB5;
+    }
+    i{
+      margin-right: 5px;
+    }
+  }
+  .modal-body{
+    padding: 40px 0;
+  }
+  .modal-footer{
+    border-top: none;
+    text-align: center;
+    padding: 0 25px 25px;
+  }
+}
+
+.btn{
+  &:active{
+    background: #7EB70B;
+  }
+}

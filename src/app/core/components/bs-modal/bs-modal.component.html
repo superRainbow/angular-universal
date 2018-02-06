@@ -1,0 +1,25 @@
+<modal #modal
+  [keyboard]="false"
+  [backdrop]="'static'"
+  (onOpen)="beforeOpen(modal)"
+  (onClose)="beforeClose()"
+  (onDismiss)="beforeClose()"
+  cssClass="basic-modal"
+>
+    <modal-header [show-close]="modalOptions.dismissBtn">
+        <h4 class="modal-title">
+          <i [ngClass]="modalOptions.icon"></i>
+          <span>{{modalOptions.title}}</span>
+        </h4>
+    </modal-header>
+    <modal-body>
+        <div class="img-container" *ngIf="modalOptions.imgKey">
+          <img [src]="imageService.getUrl(modalOptions.imgKey)" />
+        </div>
+        <div [innerHtml]="modalOptions.msg"></div>
+    </modal-body>
+    <modal-footer>
+        <button type="button" class="btn btn-grey" (click)="modalCancel(modal)" *ngIf="modalOptions.cancelBtn">{{modalOptions.cancelBtnText}}</button>
+        <button type="button" class="btn btn-red" (click)="modalClose(modal)" *ngIf="modalOptions.okBtn">{{modalOptions.okBtnText}}</button>
+    </modal-footer>
+</modal>

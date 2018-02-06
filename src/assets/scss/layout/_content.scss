@@ -35,8 +35,10 @@
 
 // input 樣式
 .input-effect{
-  position: relative;
   margin: 20px 0 30px;
+  &>div{
+    position: relative;
+  }
   input{
     width: 100%;
     border: 0;
@@ -60,23 +62,25 @@
 
 // 下拉選單
 .custom-select {
-  position: relative;
-  border-bottom: 1px solid #EBEBEB;
-  &:before, &:after {
-    content: "";
-    position: absolute;
-  }
-  &:after {
-    content: "";
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 10px 8px 0 8px;
-    border-color: #929292 transparent transparent transparent;
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    margin-top: -10px;
+  &>div{
+    position: relative;
+    border-bottom: 1px solid #EBEBEB;
+    &:before, &:after {
+      content: "";
+      position: absolute;
+    }
+    &:after {
+      content: "";
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 10px 8px 0 8px;
+      border-color: #929292 transparent transparent transparent;
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      margin-top: -10px;
+    }
   }
   select{
     width: 100%;
@@ -136,4 +140,21 @@ textarea{
   &:-moz-placeholder, &:-ms-input-placeholder, &::-moz-placeholder, &::-webkit-input-placeholder {
     color: #8E8E8E;
   }
+}
+
+// btn
+.btn{
+  width: 100%;
+  height: 75px;
+  line-height: 75px;
+  display: block;
+  font-size: 26px;
+  color: #FFFFFF;
+  text-align: center;
+  border-radius: 3px;
+  background: #018FB5;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+  cursor: pointer;
 }

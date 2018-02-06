@@ -6,6 +6,7 @@ import { CoreModule } from './core/core.module';
 import { AppComponent } from './app.component';
 import { PagesModule } from './pages/pages.module';
 import { PagesRoutingModule } from './pages/pages-routing.module';
+import { BSModalService } from './core/components/bs-modal/bs-modal.service';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,9 @@ import { PagesRoutingModule } from './pages/pages-routing.module';
     PagesModule,
     PagesRoutingModule
   ],
-  providers: [],
+  providers: [
+    BSModalService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
