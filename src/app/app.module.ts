@@ -6,8 +6,10 @@ import { CoreModule } from './core/core.module';
 import { AppComponent } from './app.component';
 import { PagesModule } from './pages/pages.module';
 import { PagesRoutingModule } from './pages/pages-routing.module';
+
 import { BSModalService } from './core/components/bs-modal/bs-modal.service';
 import { WindowUtils } from './core/utils/window-utils.service';
+import { ContactUsService } from './pages/contact-us/contact-us.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { WindowUtils } from './core/utils/window-utils.service';
   ],
   providers: [
     BSModalService,
-    WindowUtils
+    WindowUtils,
+    ContactUsService
   ],
   bootstrap: [AppComponent]
 })

@@ -5,6 +5,9 @@ import { CustomValidators } from 'ng2-validation';
 
 import { BSModalService } from '../../core/components/bs-modal/bs-modal.service';
 import { WindowUtils } from '../../core/utils/window-utils.service';
+import { ContactUsService } from './contact-us.service';
+
+import { Subscription } from 'rxjs/Subscription';
 
 /**
  * 聯繫頁面
@@ -65,7 +68,8 @@ export class ContactUsComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private bsModalService: BSModalService,
-    private window: WindowUtils
+    private window: WindowUtils,
+    private contactUsService: ContactUsService
   ) {}
 
   ngOnInit() {
@@ -111,6 +115,11 @@ export class ContactUsComponent implements OnInit {
       this.openError();
     }else {
       this.showAnimate = true;
+      this.contactUsService
+        .sendForm(this.form.value)
+        .subscribe((response) => {
+          console.log('response', response);
+        });
       setTimeout(() => {
         this.showAnimate = false;
       }, 4000);
