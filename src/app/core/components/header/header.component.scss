@@ -79,7 +79,13 @@ header{
           letter-spacing: 0;
           text-align: center;
           height: 100%;
-          &:hover, &.active {
+          &.active{
+            &:after{
+              width: 100%;
+              opacity: 1;
+            }
+          }
+          &:hover {
             text-decoration: none;
           }
           &:after {
@@ -95,7 +101,7 @@ header{
             opacity: 0;
           }
 
-          &:hover:after, &.active:after{
+          &:hover:after{
             backface-visibility: hidden;
             transition: width 350ms ease-in-out;
             width: 100%;

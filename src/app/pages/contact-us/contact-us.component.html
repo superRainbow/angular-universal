@@ -12,14 +12,14 @@
             </h3>
             <div class="input-effect" [ngClass]="{'required':!form.get('name').valid, 'showError': showError}">
               <div>
-                  <input type="text" id="name" formControlName="name" (change)="inputChange($event)">
+                  <input type="text" id="name" [ngClass]="{'hasValue': form.get('name').value}" formControlName="name">
                   <label>聯絡人姓名</label>
                   <span class="focus-border"></span>
               </div>
             </div>
             <div class="input-effect" [ngClass]="{'required':!form.get('email').valid, 'showError': showError}">
               <div>
-                  <input type="text" id="email" formControlName="email" (change)="inputChange($event)">
+                  <input type="text" id="email" [ngClass]="{'hasValue': form.get('email').value}" formControlName="email">
                   <label>e-mail</label>
                   <span class="focus-border"></span>
               </div>
@@ -27,21 +27,21 @@
             </div>
             <div class="input-effect" [ngClass]="{'required':!form.get('company').valid, 'showError': showError}">
               <div>
-                  <input type="text" id="company" formControlName="company" (change)="inputChange($event)">
+                  <input type="text" id="company" [ngClass]="{'hasValue': form.get('company').value}" formControlName="company">
                   <label>公司名稱</label>
                   <span class="focus-border"></span>
               </div>
             </div>
             <div class="input-effect">
               <div>
-                  <input type="text" id="part" formControlName="part" (change)="inputChange($event)">
+                  <input type="text" id="part" [ngClass]="{'hasValue': form.get('part').value}" formControlName="part">
                   <label>部門職稱</label>
                   <span class="focus-border"></span>
               </div>
             </div>
             <div class="input-effect" [ngClass]="{'required':!form.get('tel').valid, 'showError': showError}">
               <div>
-                  <input type="text" id="tel" formControlName="tel" (change)="inputChange($event)">
+                  <input type="text" [ngClass]="{'hasValue': form.get('tel').value}" id="tel" formControlName="tel">
                   <label>電話</label>
                   <span class="focus-border"></span>
               </div>

@@ -63,11 +63,9 @@ export class HeaderComponent implements OnInit {
   }
 
   /**
-   * 轉頁
-   * @param url
+   * 裝置效果
    */
-  goPage(url) {
-    this.router.navigate([url]);
+  mobileEvent() {
     this.showMenu();
     this.menu.nativeElement.checked = !this.menu.nativeElement.checked;
   }

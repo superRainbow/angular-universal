@@ -1,4 +1,5 @@
 import { Component, OnInit, HostListener, ElementRef } from '@angular/core';
+import { Router } from '@angular/router';
 import {
   trigger,
   state,
@@ -21,7 +22,10 @@ import {
 export class ContactComponent implements OnInit {
   state = 'hide';
 
-  constructor(public el: ElementRef) { }
+  constructor(
+    private router: Router,
+    public el: ElementRef
+  ) { }
 
   ngOnInit() {
   }
@@ -36,5 +40,13 @@ export class ContactComponent implements OnInit {
     if ($(window).scrollTop() + $(window).height() === $(document).height()) {
       this.state = 'show';
     }
+  }
+
+  /**
+   * 導頁
+   * @param url
+   */
+  getRouterLink(url) {
+    this.router.navigate([url]);
   }
 }

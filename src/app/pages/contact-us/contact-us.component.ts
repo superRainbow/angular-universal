@@ -93,36 +93,29 @@ export class ContactUsComponent implements OnInit {
     });
   }
 
-  /**
-   * input 發生改變時
-   */
-  inputChange(event) {
-    const value = event.target.value;
-    if (value) {
-      $(event.target).addClass('hasValue');
-    }else {
-      $(event.target).removeClass('hasValue');
-    }
+  restForm() {
+    this.showAnimate = false;
+    this.form.reset({budget: 0});
   }
-
 
   /**
    * 按下送出
    */
   getFormData() {
-    console.log('this.form', this.form.value);
     if (this.form.invalid) {
       this.openError();
     }else {
-      this.showAnimate = true;
+      const data = Object.assign({}, this.form.value);
+      data.requirement = this.requirementArray[this.form.value.requirement];
+      data.budget = this.budgetArray[this.form.value.budget];
       this.contactUsService
-        .sendForm(this.form.value)
+        .sendForm(data)
         .subscribe((response) => {
-          console.log('response', response);
+          this.showAnimate = true;
+          setTimeout(() => {
+            this.restForm();
+          }, 4000);
         });
-      setTimeout(() => {
-        this.showAnimate = false;
-      }, 4000);
     }
   }
 
