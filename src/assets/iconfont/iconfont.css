@@ -3,11 +3,11 @@ iconfont Webfont
 */
 @font-face {
 	font-family: 'iconfont';
-	src: url('iconfont.eot?1517809839103');
-	src: url('iconfont.eot?#iefix-1517809839103') format('embedded-opentype'),
-		url('iconfont.woff2?1517809839103') format('woff2'),
-		url('iconfont.woff?1517809839103') format('woff'),
-		url('iconfont.ttf?1517809839103') format('truetype');
+	src: url('iconfont.eot?1518142312216');
+	src: url('iconfont.eot?#iefix-1518142312216') format('embedded-opentype'),
+		url('iconfont.woff2?1518142312216') format('woff2'),
+		url('iconfont.woff?1518142312216') format('woff'),
+		url('iconfont.ttf?1518142312216') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -129,42 +129,66 @@ Glyphs list
 	content: '\ea18';
 }
 
-.icon-ico_address:before {
+.icon-ico_about_code_font:before {
 	content: '\ea19';
 }
 
-.icon-ico_answer_green:before {
+.icon-ico_about_great_font:before {
 	content: '\ea1a';
 }
 
-.icon-ico_budget:before {
+.icon-ico_about_service_font:before {
 	content: '\ea1b';
 }
 
-.icon-ico_error:before {
+.icon-ico_address:before {
 	content: '\ea1c';
 }
 
-.icon-ico_fax:before {
+.icon-ico_answer_green:before {
 	content: '\ea1d';
 }
 
-.icon-ico_sales:before {
+.icon-ico_budget:before {
 	content: '\ea1e';
 }
 
-.icon-ico_sent_data:before {
+.icon-ico_collaboration:before {
 	content: '\ea1f';
 }
 
-.icon-ico_sent_ok:before {
+.icon-ico_error:before {
 	content: '\ea20';
 }
 
-.icon-ico_telphone:before {
+.icon-ico_fax:before {
 	content: '\ea21';
 }
 
-.icon-icons8-megaphone:before {
+.icon-ico_helping_hand:before {
 	content: '\ea22';
+}
+
+.icon-ico_multicast:before {
+	content: '\ea23';
+}
+
+.icon-ico_sales:before {
+	content: '\ea24';
+}
+
+.icon-ico_sent_data:before {
+	content: '\ea25';
+}
+
+.icon-ico_sent_ok:before {
+	content: '\ea26';
+}
+
+.icon-ico_telphone:before {
+	content: '\ea27';
+}
+
+.icon-icons8-megaphone:before {
+	content: '\ea28';
 }

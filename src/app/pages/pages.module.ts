@@ -13,6 +13,7 @@ import { SharedModule } from './shared/shared.module';
 import { MainComponent } from './main/main.component';
 import { ServiceComponent } from './service/service.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 @NgModule({
   imports: [
@@ -25,7 +26,8 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
   declarations: [
     MainComponent,
     ServiceComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    AboutUsComponent
   ]
 })
 export class PagesModule { }

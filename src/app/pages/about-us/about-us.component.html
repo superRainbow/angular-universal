@@ -1,0 +1,50 @@
+<section class="parallax-core">
+  <ul>
+    <li *ngFor="let item of adList;let i = index;">
+      <i [ngClass]="item.icon"></i>
+      <p>{{item.text}}</p>
+    </li>
+  </ul>
+</section>
+<section class="parallax-content">
+  <div>
+    <section class="des">
+        <article>
+            <div class="img">
+                <img src="./assets/img/ico_about_history@2x.png">
+            </div>
+            <div class="word">
+              <h2>企業銷售流程行動化，我們與您攜手前行</h2>
+              <p>5年前，一通電話開啟了我們與零售業龍頭的合作契機，3人小組，為期2個月的焦點小組進行訪談、跟著第一線商化人員訪店盤點、產出規劃、討論修正、再次產出，平台上線導入作業…5年間，我們已協助多位客戶將 SFA/ERP 行動化，並持續優化前行。</p>
+              <p>新零售的時代，您需要一個能與您持續成長的行動應用好夥伴，這也是我們對您的承諾。</p>
+            </div>
+        </article>
+    </section>
+    <section class="history">
+        <article>
+            <h2>我們的里程碑</h2>
+            <ul>
+              <li *ngFor="let item of historyList">
+                <div>
+                  <h3>{{item.time}}</h3>
+                  <p>{{item.content}}</p>
+                </div>
+              </li>
+            </ul>
+        </article>
+    </section>
+    <section class="team" [ngClass]="teamStyle">
+      <ul>
+        <li [ngClass]="{'show': i === nowItem}" *ngFor="let item of teamList;let i = index;" (click)="changeBg(i)" (mouseenter) ="changeBg(i)">
+          <h2>{{item.topTitle}}</h2>
+          <p>{{item.topDes}}</p>
+          <small>{{item.topSmallDes}}</small>
+          <h3>{{item.subTitle}}</h3>
+          <span>{{item.subDes}}</span>
+        </li>
+      </ul>
+    </section>
+  </div>
+</section>
+<app-contact></app-contact>
+<app-fixed-page></app-fixed-page>

@@ -104,9 +104,34 @@
       width: 290px;
       overflow: hidden;
       position: relative;
-      span{
-        display: block;
-        text-indent: 60px;
+      p{
+        height: 75px;
+        display: inline-block;
+        vertical-align: top;
+        padding-left: 100px;
+        span{
+          height: 75px;
+          margin-right: 5px;
+          display: inline-block;
+          vertical-align: top;
+        }
+        em {
+          display: none;
+          line-height: 50px;
+          vertical-align: top;
+          font-size: 50px;
+          animation-name: dot;
+          animation-duration: 1.4s;
+          animation-iteration-count: infinite;
+          animation-fill-mode: both;
+          text-indent: inherit;
+          &:nth-of-type(2) {
+            animation-delay: .2s;
+          }
+          &:nth-of-type(3) {
+            animation-delay: .4s;
+          }
+        }
       }
       i{
         position: absolute;
@@ -121,10 +146,18 @@
         opacity: 0;
         margin-left: -40px;
       }
+      &.showSend{
+        p em{
+          display: inline-block;
+        }
+      }
       &.showAnimate{
         background: #018FB5;
         animation: bg 1s cubic-bezier(0.27,0.53,0.28,1.58) forwards;
         animation-delay: 0.7s;
+        p em{
+          display: none;
+        }
         .icon-ico_sent_data{
           transform: translateX(0px) scale(1);
           animation: move-left 0.5s cubic-bezier(0.27,0.53,0.28,1.58) forwards;
@@ -288,4 +321,16 @@
 @keyframes go-top {
   0% { transform: translateY(-10px) scale(0); opacity: 0; }
   100% { transform: translateY(0px) scale(1); opacity: 1; }
+}
+
+@keyframes dot {
+  0% {
+    opacity: .2;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: .2;
+  }
 }

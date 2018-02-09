@@ -28,7 +28,7 @@ export class HeaderComponent implements OnInit {
     },
     {
       name: '關於',
-      url: '/www'
+      url: '/about-us'
     },
     {
       name: '聯繫',

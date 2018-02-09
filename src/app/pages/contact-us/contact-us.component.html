@@ -70,10 +70,10 @@
             </div>
             <div class="text-area">
               <textarea formControlName="description" placeholder="服務需求或說明" [ngClass]="{'required':!form.get('description').valid, 'showError': showError}"></textarea>
-              <a class="btn" [ngClass]="{'showAnimate': showAnimate}" (click)="getFormData()">
+              <a class="btn" [ngClass]="{'showSend': btnAnimate === 1, 'showAnimate': btnAnimate === 2}" (click)="getFormData()">
                 <i class="icon-ico_sent_data"></i>
                 <i class="icon-ico_sent_ok"></i>
-                <span>送出</span>
+                <p><span>送</span><span>出</span><em>.</em><em>.</em><em>.</em></p>
               </a>
             </div>
           </form>

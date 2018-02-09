@@ -22,7 +22,7 @@ import { Subscription } from 'rxjs/Subscription';
 })
 export class ContactUsComponent implements OnInit {
   showError = false;
-  showAnimate = false;
+  btnAnimate = 0;
   form: FormGroup;
   requirementArray = [
     '企業行動應用諮詢',
@@ -94,8 +94,9 @@ export class ContactUsComponent implements OnInit {
   }
 
   restForm() {
-    this.showAnimate = false;
+    this.btnAnimate = 0;
     this.form.reset({budget: 0});
+    this.showError = false;
   }
 
   /**
@@ -103,18 +104,24 @@ export class ContactUsComponent implements OnInit {
    */
   getFormData() {
     if (this.form.invalid) {
-      this.openError();
+      this.openError('資料尚未填妥喔！');
     }else {
+      this.btnAnimate = 1;
       const data = Object.assign({}, this.form.value);
       data.requirement = this.requirementArray[this.form.value.requirement];
       data.budget = this.budgetArray[this.form.value.budget];
       this.contactUsService
         .sendForm(data)
         .subscribe((response) => {
-          this.showAnimate = true;
-          setTimeout(() => {
+          if (response['returnCode'] === 200) {
+            this.btnAnimate = 2;
+            setTimeout(() => {
+              this.restForm();
+            }, 4000);
+          }else {
+            this.openError('寄信發生錯誤！請洽業務聯絡窗口。', false);
             this.restForm();
-          }, 4000);
+          }
         });
     }
   }
@@ -122,14 +129,14 @@ export class ContactUsComponent implements OnInit {
   /**
    * 跳出錯誤modal
    */
-  openError() {
+  openError(msg, showError= true) {
     this.bsModalService.notifyShowModalAlert({
       title: '提醒您',
-      msg: '資料尚未填妥喔！',
+      msg: msg,
       icon: 'icon-ico_error',
       cancelBtn: false,
       callback: () => {
-        this.showError = true;
+        this.showError = showError;
       }
     });
   };
