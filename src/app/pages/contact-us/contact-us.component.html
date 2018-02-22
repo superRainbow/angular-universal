@@ -4,12 +4,15 @@
 <section class="parallax-content">
     <section>
       <div class="content">
+        <div class="title">
+          <h3>
+            <i class="icon-ic_mail2"></i>
+            <span>Contact Us / 聯絡我們</span>
+          </h3>
+          <p>歡迎您留下聯絡方式，在填完相關資料並按下送出鍵後，我們會在24小時內與您聯繫。</p>
+        </div>
         <div class="form">
           <form class="form-horizontal" [formGroup]="form" novalidate>
-            <h3>
-              <i class="icon-ic_mail2"></i>
-              <span>Contact Us / 聯絡我們</span>
-            </h3>
             <div class="input-effect" [ngClass]="{'required':!form.get('name').valid, 'showError': showError}">
               <div>
                   <input type="text" id="name" [ngClass]="{'hasValue': form.get('name').value}" formControlName="name">
@@ -56,10 +59,10 @@
               </div>
               <p>需求服務內容為必填</p>
             </div>
-            <h3>
+            <h4>
               <i class="icon-ico_budget"></i>
               <span>Budget / 預算 (NTD)</span>
-            </h3>
+            </h4>
             <div class="budget-radio">
               <div class="radio-area" *ngFor="let item of budgetArray;let i = index;">
                 <label>
@@ -69,8 +72,15 @@
               </div>
             </div>
             <div class="text-area">
-              <textarea formControlName="description" placeholder="服務需求或說明" [ngClass]="{'required':!form.get('description').valid, 'showError': showError}"></textarea>
-              <a class="btn" [ngClass]="{'showSend': btnAnimate === 1, 'showAnimate': btnAnimate === 2}" (click)="getFormData()">
+              <textarea formControlName="description" placeholder="請簡短寫下具體需求或問題。" [ngClass]="{'required':!form.get('description').valid, 'showError': showError}"></textarea>
+              <div class="checkbox-area">
+                <label class="custom-checkbox">同意
+                  <input type="checkbox" formControlName="agree"/>
+                  <div></div>
+                </label>
+                <a (click)="showPrivacy()">隱私政策</a>
+              </div>
+              <a class="btn" [ngClass]="{'showSend': btnAnimate === 1, 'showAnimate': btnAnimate === 2, 'disabled': form.get('agree').value !== true}" (click)="getFormData()">
                 <i class="icon-ico_sent_data"></i>
                 <i class="icon-ico_sent_ok"></i>
                 <p><span>送</span><span>出</span><em>.</em><em>.</em><em>.</em></p>

@@ -35,6 +35,7 @@ export class BSModalComponent implements OnInit, AfterViewInit {
   ) {
 
     this.modalOptions = {
+      modalClass: '',
       title: Constants.MODAL.ALERT_TITLE,
       icon: '',
       msg: '',
@@ -47,6 +48,7 @@ export class BSModalComponent implements OnInit, AfterViewInit {
     };
 
     this.alertOptions = {
+      modalClass: '',
       title: Constants.MODAL.ALERT_TITLE,
       icon: '',
       msg: '',

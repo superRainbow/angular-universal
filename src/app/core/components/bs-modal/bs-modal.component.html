@@ -4,7 +4,7 @@
   (onOpen)="beforeOpen(modal)"
   (onClose)="beforeClose()"
   (onDismiss)="beforeClose()"
-  cssClass="basic-modal"
+  [cssClass]="modalOptions.modalClass"
 >
     <modal-header [show-close]="modalOptions.dismissBtn">
         <h4 class="modal-title">

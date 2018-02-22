@@ -8,6 +8,7 @@ export enum BS_MODAL_TYPES  {
 };
 
 export interface BSModalOptions {
+  modalClass?: string;
   title?: string;
   icon?: string;
   msg?: string;

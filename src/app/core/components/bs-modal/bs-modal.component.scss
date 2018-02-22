@@ -9,13 +9,11 @@ $imgPath : "/assets/img";
   }
 }
 
+// 基本
 .modal-dialog{
   width: 80%;
   max-width: 480px;
   margin: 15% auto;
-}
-
-.basic-modal{
   .modal-content{
     border:none;
     box-shadow: 0 0 50px 0 rgba(0,0,0,0.50);
@@ -49,6 +47,65 @@ $imgPath : "/assets/img";
     border-top: none;
     text-align: center;
     padding: 0 25px 25px;
+  }
+  @include phone-width{
+    .modal-header{
+      font-size: 20px;
+      padding: 10px;
+      .close{
+        top: -15px;
+        right: 10px;
+      }
+    }
+    .modal-body{
+      &>div{
+        font-size: 24px;
+      }
+    }
+    .modal-footer{
+      .btn{
+        height: 70px;
+        line-height: 70px;
+      }
+    }
+  }
+}
+
+.privacy-modal{
+  margin: 5% auto;
+  max-width: inherit;
+  .modal-body{
+    text-align: left;
+    padding: 35px 50px;
+    &>div{
+      font-size: 16px;
+      color: #3D3D3D;
+      height: 500px;
+      overflow-y: scroll;
+      section{
+        margin-top: 20px;
+      }
+      h5{
+        font-weight: bolder;
+      }
+    }
+  }
+  .modal-footer{
+    padding: 0;
+  }
+  @include pad-width{
+    margin: 10% auto;
+    .modal-body{
+      padding: 20px;
+    }
+  }
+  @include phone-width{
+    .modal-body{
+      padding: 20px;
+      &>div{
+        font-size: 12px;
+      }
+    }
   }
 }
 
