@@ -251,21 +251,6 @@
       @extend %theme-h2;
       margin-bottom: 25px;
     }
-    li{
-      @extend %theme-p;
-      position: relative;
-      padding-left: 20px;
-      &:before {
-        content: "\ea11";
-        display: inline-block;
-        font-family: 'iconfont';
-        font-size: 10px;
-        color: $theme-green;
-        position: absolute;
-        left: 0;
-        top: 0;
-      }
-    }
   }
   @include phone-width{
     article{
