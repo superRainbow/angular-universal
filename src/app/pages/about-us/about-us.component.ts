@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { WindowUtils } from '../../core/utils/window-utils.service';
+
 @Component({
   selector: 'app-about-us',
   templateUrl: './about-us.component.html',
@@ -89,9 +91,12 @@ export class AboutUsComponent implements OnInit {
     }
   ];
 
-  constructor() { }
+  constructor(
+    private window: WindowUtils
+  ) { }
 
   ngOnInit() {
+    this.window.scrollTop();
   }
 
   /**
