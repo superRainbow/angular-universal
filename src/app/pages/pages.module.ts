@@ -14,6 +14,7 @@ import { MainComponent } from './main/main.component';
 import { ServiceComponent } from './service/service.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { CasePngComponent } from './case/case-png/case-png.component';
 
 @NgModule({
   imports: [
@@ -27,7 +28,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
     MainComponent,
     ServiceComponent,
     ContactUsComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    CasePngComponent
   ]
 })
 export class PagesModule { }

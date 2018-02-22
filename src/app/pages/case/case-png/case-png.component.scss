@@ -1,0 +1,154 @@
+@import "~assets/scss/helpers/index";
+@import "~assets/scss/layout/index";
+
+.parallax-core{
+  background-image: url('/assets/img/img_about_us_title_pic.jpg');
+  position: relative;
+  @include phone-width{
+
+  }
+}
+.parallax-content{
+  section{
+    article{
+      max-width: $pc-media;
+      margin: 0 auto;
+      padding: 120px 10px;
+      display: flex;
+      align-items: center;
+    }
+    h2{
+      @extend %theme-h2;
+      margin-bottom: 25px;
+    }
+    p{
+      @extend %theme-p;
+    }
+    .img{
+      i{
+        @extend %theme-h2;
+        font-size: 185px;
+      }
+    }
+    @include phone-width{
+      article{
+        padding: 30px 15px 30px 20px;
+        flex-direction:column;
+      }
+      .img{
+        display: none;
+      }
+      h2{
+        font-size: 22px;
+        line-height: 1.6em;
+        margin-bottom: 25px;
+        text-align: center;
+      }
+    }
+  }
+  .a-1, .a-4{
+    article{
+      flex-direction: column;
+    }
+  }
+  .a-2, .a-4{
+    background: #F3F9FB;
+  }
+  .a-2{
+    .img{
+      margin-right: 70px;
+      padding: 30px 30px 0 30px;
+    }
+    @include phone-width{
+      h2{
+        text-align: left;
+        padding-left: 70px;
+        position: relative;
+        &:before{
+          content: "\ea24";
+          font-family: 'iconfont';
+          font-size: 52px;
+          color: $theme-light-blue;
+          position: absolute;
+          top: 18px;
+          left: 0;
+        }
+      }
+    }
+  }
+  .a-3{
+    .word{
+      order:1;
+    }
+    .img{
+      order:2;
+    }
+  }
+  .a-4{
+    .title{
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    ul{
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      text-align: center;
+      li{
+        max-width: 160px;
+      }
+      i{
+        @extend %theme-h2;
+        font-size: 125px;
+      }
+      p{
+        margin-top: 55px;
+      }
+    }
+    @include phone-width{
+      background: transparent;
+      .title{
+        position: relative;
+        background: #F3F9FB;
+        padding: 30px 0;
+        &:before{
+          content: "";
+          display: block;
+          background: #F3F9FB;
+          position: absolute;
+          width: 120%;
+          height: 100%;
+          z-index: -1;
+          top: 0;
+          left: -20px;
+        }
+      }
+      ul{
+        flex-direction:column;
+        li{
+          max-width: 100%;
+          padding: 45px 0;
+          position: relative;
+          &:nth-child(2n){
+            background: #EAF3F7;
+            &:before{
+              content: "";
+              display: block;
+              background: #EAF3F7;
+              position: absolute;
+              width: 120%;
+              height: 100%;
+              z-index: -1;
+              top: 0;
+              left: -20px;
+            }
+          }
+        }
+        p{
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+}

@@ -1,0 +1,62 @@
+<section class="parallax-core">
+  <ul>
+    <li *ngFor="let item of adList;let i = index;">
+      <i [ngClass]="item.icon"></i>
+      <p>{{item.text}}</p>
+    </li>
+  </ul>
+</section>
+<section class="parallax-content">
+  <div>
+    <section class="a-1">
+      <article>
+        <h2>{{a1Section.title}}</h2>
+        <div class="word">
+          <p *ngFor="let item of a1Section.des">{{item}}</p>
+        </div>
+      </article>
+    </section>
+    <section class="a-2">
+      <article>
+          <div class="img">
+            <i [ngClass]="a2Section.icon"></i>
+          </div>
+          <div class="word">
+            <h2>{{a2Section.title}}</h2>
+            <ul class="ul-style">
+              <li *ngFor="let item of a2Section.list">{{item}}</li>
+            </ul>
+          </div>
+      </article>
+    </section>
+    <section class="a-3">
+      <article>
+          <div class="img">
+              <img src="./assets/img/ico_about_history@2x.png">
+          </div>
+          <div class="word">
+            <h2>{{a3Section.title}}</h2>
+            <ul class="ul-style">
+              <li *ngFor="let item of a3Section.list">{{item}}</li>
+            </ul>
+          </div>
+      </article>
+    </section>
+    <section class="a-4">
+      <article>
+        <div class="title">
+          <h2>{{a4Section.title}}</h2>
+          <p>{{a4Section.des}}</p>
+        </div>
+        <ul>
+          <li *ngFor="let item of a4Section.list">
+            <i [ngClass]="item.icon"></i>
+            <p>{{item.text}}</p>
+          </li>
+        </ul>
+      </article>
+    </section>
+  </div>
+</section>
+<app-contact></app-contact>
+<app-fixed-page></app-fixed-page>
