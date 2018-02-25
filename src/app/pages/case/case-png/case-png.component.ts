@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { WindowUtils } from '../../../core/utils/window-utils.service';
+
 @Component({
   selector: 'app-case-png',
   templateUrl: './case-png.component.html',
@@ -90,9 +92,12 @@ export class CasePngComponent implements OnInit {
     ]
   };
 
-  constructor() { }
+  constructor(
+    private window: WindowUtils
+  ) { }
 
   ngOnInit() {
+    this.window.scrollTop();
   }
 
 }
