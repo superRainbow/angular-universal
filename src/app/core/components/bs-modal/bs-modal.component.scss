@@ -2,6 +2,12 @@
 $imgPath : "/assets/img";
 
 //  modal
+.modal.fade.in{
+  display: block !important;
+}
+.modal-dialog{
+    overflow-y: initial !important;
+}
 .modal-backdrop{
   background: rgba(13,28,42,1);
   &.in{
@@ -44,9 +50,6 @@ $imgPath : "/assets/img";
   .modal-body{
     padding: 40px 0;
   }
-  .scroll{
-    height: 400px;
-  }
   .modal-footer{
     border-top: none;
     text-align: center;
@@ -85,6 +88,8 @@ $imgPath : "/assets/img";
     &>div{
       font-size: 16px;
       color: #3D3D3D;
+      height: 400px;
+      overflow-y: auto;
       section{
         margin-top: 20px;
       }
