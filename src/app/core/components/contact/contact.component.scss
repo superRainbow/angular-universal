@@ -42,9 +42,25 @@
       background: #7dcde4;
     }
   }
+  @include pad-width{
+    .contact-btn{
+      opacity:1;
+      &.show{
+        transform: none;
+        animation: none;
+      }
+    }
+  }
   @include phone-width{
     h2{
       font-size: 22px;
+    }
+    .contact-btn{
+      opacity:1;
+      &.show{
+        transform: none;
+        animation: none;
+      }
     }
   }
 }

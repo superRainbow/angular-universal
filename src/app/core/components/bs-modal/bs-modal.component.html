@@ -16,7 +16,9 @@
         <div class="img-container" *ngIf="modalOptions.imgKey">
           <img [src]="imageService.getUrl(modalOptions.imgKey)" />
         </div>
-        <div [innerHtml]="modalOptions.msg"></div>
+        <div class="scroll">
+          <div [innerHtml]="modalOptions.msg"></div>
+        </div>
     </modal-body>
     <modal-footer>
         <button type="button" class="btn btn-grey" (click)="modalCancel(modal)" *ngIf="modalOptions.cancelBtn">{{modalOptions.cancelBtnText}}</button>

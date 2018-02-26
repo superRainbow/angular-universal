@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener, ElementRef } from '@angular/core';
+import { Component, OnInit, HostListener, ElementRef, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import {
   trigger,
@@ -20,12 +20,18 @@ import {
   styleUrls: ['./fixed-page.component.scss']
 })
 export class FixedPageComponent implements OnInit {
+
+  @Input() options: any;
+  hideMail = false;
   constructor(
     public el: ElementRef,
     private router: Router
   ) { }
 
   ngOnInit() {
+    if (this.options && this.options.hideMail) {
+      this.hideMail = this.options.hideMail;
+    }
   }
 
   /**

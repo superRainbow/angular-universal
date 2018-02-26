@@ -14,7 +14,7 @@
       padding: 25px 25px 25px 80px;
       background:#fff;
       &:hover{
-        background: #EBF2F4;
+        background: #f7f9fb;
       }
       &:after{
         content: "";
@@ -43,7 +43,7 @@
       padding: 40px 25px 40px 120px;
       line-height: 1.8em;
       background: #FAFAFA;
-      font-size: 14px;
+      font-size: 16px;
       color: #4A4A4A;
       position: relative;
       &:after{
@@ -104,7 +104,7 @@
       }
     }
 }
-.qa-area{
+.panel-area{
   border-left: 1px solid #DBE7E7;
   border-right: 1px solid #DBE7E7;
 }

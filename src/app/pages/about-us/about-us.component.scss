@@ -31,6 +31,7 @@
     }
   }
   @include phone-width{
+    background-image: url('/assets/img/img_about_us_title_pic_small.jpg');
     ul{
       width: 200px;
       position: static;
@@ -171,7 +172,6 @@
       position: absolute;
     }
     li {
-      margin-bottom: 50px;
       position: relative;
       overflow: hidden;
       &:before{
@@ -241,6 +241,13 @@
         line-height: 30px;
         padding: 30px;
         border-radius: 0 0 6px 6px;
+      }
+    }
+  }
+  @include pc-pad-width{
+    ul{
+      li:not(:first-child){
+        margin-top: -40px;
       }
     }
   }
@@ -356,22 +363,8 @@
     li{
       width: 260px;
       height: 260px;
-      border-radius: 50%;
       text-align: center;
-      background: rgba(255,255,255,1);
       cursor: pointer;
-      &.show{
-        h2, p, small{
-          display: block;
-        }
-      }
-      &:hover{
-        background: $theme-green;
-        color: #fff;
-        h3{
-          color: #fff;
-        }
-      }
     }
     h2{
       color: #3D3D3D;
@@ -421,6 +414,26 @@
       line-height: 22px;
     }
   }
+  @include pc-pad-width{
+    ul{
+      li{
+        border-radius: 50%;
+        background: rgba(255,255,255,1);
+        &.show{
+          h2, p, small{
+            display: block;
+          }
+        }
+        &:hover{
+          background: $theme-green;
+          color: #fff;
+          h3{
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
   @include pad-width{
     ul{
       width: 720px;
@@ -448,18 +461,17 @@
         display: flex;
         flex-direction: column;
         text-align: left;
-        background: none;
         border-radius: none;
         padding-left: 30px;
         margin-bottom: 65px;
         &:nth-child(2){
           h2:after{
-            content: "\ea1a";
+            content: "\ea1b";
           }
         }
         &:nth-child(3){
           h2:after{
-            content: "\ea1b";
+            content: "\ea1c";
           }
         }
         h2, p, small, span{
@@ -481,7 +493,7 @@
           order:1;
           position: relative;
           &:after{
-            content: "\ea19";
+            content: "\ea07";
             font-family: 'iconfont';
             color: #b9ff7d;
             font-size: 35px;

@@ -5,6 +5,9 @@
   background-image: url('/assets/img/img_contact_us.jpg');
   h2{
   }
+  @include phone-width{
+    background-image: url('/assets/img/img_contact_us_small.jpg');
+  }
 }
 
 .parallax-content {
@@ -51,7 +54,8 @@
   }
   .form{
     width: 360px;
-    height: 1250px;
+    height: 1300px;
+    overflow: hidden;
     padding-bottom: 250px;
     h4{
       font-size: 24px;
@@ -91,7 +95,7 @@
       padding: 0 20px;
       position: absolute;
       left: 0;
-      top: 1120px;
+      top: 1160px;
       text-align: center;
       textarea{
         font-size: 18px;
@@ -150,7 +154,7 @@
         a{
           color: #3D3D3D;
           display: inline-block;
-          border-bottom: 3px solid #979797;
+          border-bottom: 1px solid #979797;
           margin: 0 5px;
         }
       }
@@ -384,6 +388,9 @@
     .qa{
       padding: 60px 20px;
       background: #ffffff;
+      &:before{
+        display: none;
+      }
       h3{
         font-size: 18px;
         margin-bottom: 15px;

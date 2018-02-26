@@ -115,7 +115,7 @@ export class ContactUsComponent implements OnInit {
       email: [null, [CustomValidators.email, Validators.required]],
       company: [null, [Validators.required]],
       part: '',
-      tel: ['', [Validators.required, CustomValidators.number]],
+      tel: ['', [Validators.required]],
       requirement: [null, [Validators.required]],
       budget: [0, [Validators.required]],
       description: [null, [Validators.required]],
