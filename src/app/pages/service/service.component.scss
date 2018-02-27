@@ -29,7 +29,13 @@
     height: 280px;
   }
   @include phone-width{
-    height: 120px;
+    height: 300px;
+    .mobile-img{
+      display:block;
+    }
+    .desktop-img{
+      display:none;
+    }
   }
 }
 

@@ -29,11 +29,11 @@ export class ServiceComponent implements OnInit {
     },
     {
       imgKey: './assets/img/img_index_pic2.jpg',
-      imgSmallKey: './assets/img/img_index_pic2.jpg'
+      imgSmallKey: './assets/img/img_index_m_pic2.jpg'
     },
     {
       imgKey: './assets/img/img_index_pic3.jpg',
-      imgSmallKey: './assets/img/img_index_pic3.jpg'
+      imgSmallKey: './assets/img/img_index_m_pic3.jpg'
     }
   ];
   adOptins= {

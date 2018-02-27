@@ -20,6 +20,7 @@
   justify-content: space-between;
   padding: 80px 20px 0;
   position: relative;
+  overflow: hidden;
   .title{
     flex: 1 100%;
     margin-bottom: 40px;
@@ -198,6 +199,7 @@
         top: -3px;
         left: 50%;
         font-size: 40px;
+        width: 50px;
       }
       .icon-ico_sent_data{
         margin-left: -60px;
@@ -303,7 +305,7 @@
   }
   @include pad-width{
     .form{
-      flex:1;
+      width: 300px;
     }
     .company{
       width: 360px;
