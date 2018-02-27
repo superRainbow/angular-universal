@@ -33,6 +33,15 @@
   }
 }
 
+// ie
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  :host /deep/ svg{
+    min-width: 822px !important;
+    min-height: 822px !important;
+  }
+}
+
+
 .belief{
   background: rgba(241,244,246, 0.9);
   article{
@@ -277,6 +286,9 @@
   }
   .stage1, .stage2, .stage3, .stage4, .stage5{
     position: relative;
+  }
+  .stage2, .stage3, .stage4, .stage5{
+    height: 830px;
   }
   .stage2{
     .delay-0{

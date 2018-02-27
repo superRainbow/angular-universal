@@ -2,6 +2,14 @@
 $imgPath : "/assets/img";
 
 //  modal
+.modal {
+  // position: absolute;
+  // overflow-y: scroll;
+  &.modal-open{
+    overflow-y: auto;
+    -webkit-overflow-scrolling:touch;
+  }
+}
 .modal.fade.in{
   display: block !important;
 }
