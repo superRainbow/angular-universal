@@ -1,6 +1,8 @@
 import { Component, OnInit, HostListener, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { GoogleAnalyticsEventsService } from '../../service/google-analytics-events.service';
+
 /**
  * 共用元件：上方 header
  * @export
@@ -37,7 +39,8 @@ export class HeaderComponent implements OnInit {
   ];
   constructor(
     public el: ElementRef,
-    private router: Router
+    private router: Router,
+    private googleAnalyticsEventsService: GoogleAnalyticsEventsService
   ) { }
 
   ngOnInit() {}
@@ -65,8 +68,9 @@ export class HeaderComponent implements OnInit {
   /**
    * 裝置效果
    */
-  mobileEvent() {
+  mobileEvent(item) {
     this.showMenu();
     this.menu.nativeElement.checked = !this.menu.nativeElement.checked;
+    this.googleAnalyticsEventsService.emitEvent('上方 Menu', 'click', item.name, 1);
   }
 }

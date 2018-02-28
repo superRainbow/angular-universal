@@ -8,6 +8,8 @@ import {
   transition
 } from '@angular/animations';
 
+import { GoogleAnalyticsEventsService } from '../../service/google-analytics-events.service';
+
 /**
  * 共用元件：右下方的捷徑元件
  * @export
@@ -25,7 +27,8 @@ export class FixedPageComponent implements OnInit {
   hideMail = false;
   constructor(
     public el: ElementRef,
-    private router: Router
+    private router: Router,
+    private googleAnalyticsEventsService: GoogleAnalyticsEventsService
   ) { }
 
   ngOnInit() {
@@ -40,6 +43,7 @@ export class FixedPageComponent implements OnInit {
    */
   getRouterLink(url) {
     this.router.navigate([url]);
+    this.googleAnalyticsEventsService.emitEvent('固定', 'click', '聯繫', 1);
   }
 
   /**

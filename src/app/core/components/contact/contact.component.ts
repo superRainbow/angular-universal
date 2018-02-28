@@ -8,6 +8,8 @@ import {
   transition
 } from '@angular/animations';
 
+import { GoogleAnalyticsEventsService } from '../../service/google-analytics-events.service';
+
 /**
  * 共用元件：網頁下方的聯繫元件
  * @export
@@ -24,7 +26,8 @@ export class ContactComponent implements OnInit {
 
   constructor(
     private router: Router,
-    public el: ElementRef
+    public el: ElementRef,
+    private googleAnalyticsEventsService: GoogleAnalyticsEventsService
   ) { }
 
   ngOnInit() {
@@ -48,5 +51,6 @@ export class ContactComponent implements OnInit {
    */
   getRouterLink(url) {
     this.router.navigate([url]);
+    this.googleAnalyticsEventsService.emitEvent('下方聯繫', 'click', '聯繫', 1);
   }
 }

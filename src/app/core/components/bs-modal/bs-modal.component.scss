@@ -1,21 +1,6 @@
 @import "~assets/scss/helpers/index";
 $imgPath : "/assets/img";
 
-//  modal
-.modal {
-  // position: absolute;
-  // overflow-y: scroll;
-  &.modal-open{
-    overflow-y: auto;
-    -webkit-overflow-scrolling:touch;
-  }
-}
-.modal.fade.in{
-  display: block !important;
-}
-.modal-dialog{
-    overflow-y: initial !important;
-}
 .modal-backdrop{
   background: rgba(13,28,42,1);
   &.in{

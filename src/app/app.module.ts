@@ -9,6 +9,7 @@ import { PagesRoutingModule } from './pages/pages-routing.module';
 
 import { BSModalService } from './core/components/bs-modal/bs-modal.service';
 import { WindowUtils } from './core/utils/window-utils.service';
+import { GoogleAnalyticsEventsService } from './core/service/google-analytics-events.service';
 import { ContactUsService } from './pages/contact-us/contact-us.service';
 
 @NgModule({
@@ -24,7 +25,8 @@ import { ContactUsService } from './pages/contact-us/contact-us.service';
   providers: [
     BSModalService,
     WindowUtils,
-    ContactUsService
+    ContactUsService,
+    GoogleAnalyticsEventsService
   ],
   bootstrap: [AppComponent]
 })
