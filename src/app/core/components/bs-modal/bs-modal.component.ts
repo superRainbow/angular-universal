@@ -74,11 +74,12 @@ export class BSModalComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    window.ontouchmove = (e) => {
-      if (this.preventTouchScroll) {
-        e.preventDefault();
-      }
-    };
+    // 在內容有 scroll 時有問題
+    // window.ontouchmove = (e) => {
+    //   if (this.preventTouchScroll) {
+    //     e.preventDefault();
+    //   }
+    // };
   }
 
   /**
