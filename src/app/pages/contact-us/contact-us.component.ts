@@ -8,6 +8,7 @@ import { WindowUtils } from '../../core/utils/window-utils.service';
 import { ContactUsService } from './contact-us.service';
 
 import { Subscription } from 'rxjs/Subscription';
+import { GoogleAnalyticsEventsService } from '../../core/service/google-analytics-events.service';
 
 /**
  * 聯繫頁面
@@ -98,6 +99,7 @@ export class ContactUsComponent implements OnInit {
     private fb: FormBuilder,
     private bsModalService: BSModalService,
     private window: WindowUtils,
+    private googleAnalyticsEventsService: GoogleAnalyticsEventsService,
     private contactUsService: ContactUsService
   ) {}
 
@@ -145,6 +147,7 @@ export class ContactUsComponent implements OnInit {
         .subscribe((response) => {
           if (response['returnCode'] === 200) {
             this.btnAnimate = 2;
+            this.googleAnalyticsEventsService.emitEvent('聯繫頁', '點擊送出按鈕', '聯繫Email發送成功', null);
             setTimeout(() => {
               this.restForm();
             }, 4000);

@@ -12,7 +12,22 @@ export class AppComponent {
   constructor(public router: Router) {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
-        ga('set', 'page', event.urlAfterRedirects);
+        let urlName = '';
+        switch (event.urlAfterRedirects) {
+          case '/service':
+            urlName = '服務頁';
+            break;
+          case '/case/case-png':
+            urlName = '案例頁';
+            break;
+          case '/about-us':
+            urlName = '關於頁';
+            break;
+          case '/contact-us':
+            urlName = '聯繫頁';
+            break;
+        }
+        ga('set', 'page', urlName);
         ga('send', 'pageview');
       }
     });

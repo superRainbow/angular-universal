@@ -51,6 +51,6 @@ export class ContactComponent implements OnInit {
    */
   getRouterLink(url) {
     this.router.navigate([url]);
-    this.googleAnalyticsEventsService.emitEvent('下方聯繫', 'click', '聯繫', 1);
+    this.googleAnalyticsEventsService.emitEvent('點擊Foot區域', '點擊聯繫動作', '點擊(專人免費聯繫說明)', null);
   }
 }

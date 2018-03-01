@@ -71,6 +71,6 @@ export class HeaderComponent implements OnInit {
   mobileEvent(item) {
     this.showMenu();
     this.menu.nativeElement.checked = !this.menu.nativeElement.checked;
-    this.googleAnalyticsEventsService.emitEvent('上方 Menu', 'click', item.name, 1);
+    this.googleAnalyticsEventsService.emitEvent('點擊Top區域', '點擊導覽動作', `點擊(${item.name})`, null);
   }
 }

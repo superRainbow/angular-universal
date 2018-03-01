@@ -12,6 +12,7 @@
 }
 
 .parallax-content {
+  overflow: hidden;
 }
 
 .content{
@@ -20,7 +21,6 @@
   justify-content: space-between;
   padding: 80px 20px 0;
   position: relative;
-  overflow: hidden;
   .title{
     flex: 1 100%;
     margin-bottom: 40px;

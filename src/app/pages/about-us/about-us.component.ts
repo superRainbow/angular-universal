@@ -26,11 +26,11 @@ export class AboutUsComponent implements OnInit {
   ];
   historyList = [
     {
-      time: '1991.05',
+      time: '1991/05',
       content: '三竹資訊股份有限公司成立，資本額 5,000 仟元'
     },
     {
-      time: '2010.02',
+      time: '2010/02',
       content: 'APP 應用事業群成立，協助設計出台灣第一家行動銀行APP，上架成功。'
     },
     {

@@ -43,7 +43,7 @@ export class FixedPageComponent implements OnInit {
    */
   getRouterLink(url) {
     this.router.navigate([url]);
-    this.googleAnalyticsEventsService.emitEvent('固定', 'click', '聯繫', 1);
+    this.googleAnalyticsEventsService.emitEvent('點擊Foot區域', '點擊聯繫動作', '點擊(信封)', null);
   }
 
   /**
