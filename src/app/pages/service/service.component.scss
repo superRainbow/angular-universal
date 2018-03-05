@@ -30,6 +30,13 @@
   }
   @include phone-width{
     height: 270px;
+    .owl-carousel{
+      &:hover{
+        .owl-prev, .owl-next{
+          display: none;
+        }
+      }
+    }
     .mobile-img{
       display:block;
     }
