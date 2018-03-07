@@ -24,6 +24,10 @@ export class ServiceComponent implements OnInit {
 
   adData= [
     {
+      imgKey: './assets/img/img_index_pic1.jpg',
+      imgSmallKey: './assets/img/img_index_m_pic1.jpg'
+    },
+    {
       imgKey: './assets/img/img_index_pic2.jpg',
       imgSmallKey: './assets/img/img_index_m_pic2.jpg'
     },
