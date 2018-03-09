@@ -72,41 +72,50 @@ header{
       li{
         width: 100px;
         a{
+          text-align: center;
           font-size: 17px;
           font-weight: 400;
           line-height: 81px;
           position: relative;
-          text-transform: uppercase;
           letter-spacing: 0;
-          text-align: center;
           height: 100%;
-          &.active{
-            &:after{
+        }
+      }
+    }
+  }
+  @include pc-pad-width{
+    nav{
+      ul{
+        li{
+          a{
+            text-transform: uppercase;
+            &.active{
+              &:after{
+                width: 100%;
+                opacity: 1;
+              }
+            }
+            &:hover {
+              text-decoration: none;
+            }
+            &:after {
+              backface-visibility: hidden;
+              border: 2px solid #CEFF84;
+              bottom: 0px;
+              content: "";
+              display: block;
+              margin: 0 auto;
+              position: relative;
+              transition: all 280ms ease-in-out;
+              width: 0;
+              opacity: 0;
+            }
+            &:hover:after{
+              backface-visibility: hidden;
+              transition: width 350ms ease-in-out;
               width: 100%;
               opacity: 1;
             }
-          }
-          &:hover {
-            text-decoration: none;
-          }
-          &:after {
-            backface-visibility: hidden;
-            border: 2px solid #CEFF84;
-            bottom: 0px;
-            content: "";
-            display: block;
-            margin: 0 auto;
-            position: relative;
-            transition: all 280ms ease-in-out;
-            width: 0;
-            opacity: 0;
-          }
-
-          &:hover:after{
-            backface-visibility: hidden;
-            transition: width 350ms ease-in-out;
-            width: 100%;
-            opacity: 1;
           }
         }
       }
@@ -192,13 +201,10 @@ header{
             padding: 15px 0;
             color: rgba(255, 255, 255, 0.6);
             line-height: initial;
-            &:after{
-              border: 2px solid transparent;
-            }
-            &:hover, &:active{
-              color: #fff;
-              background: #0389ae;
-            }
+              &:hover, &:active{
+                color: #fff;
+                background: #0389ae;
+              }
           }
         }
         &.animate{
