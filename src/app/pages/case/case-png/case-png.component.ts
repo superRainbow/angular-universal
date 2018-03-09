@@ -61,7 +61,7 @@ export class CasePngComponent implements OnInit {
     carouselOptins: {
       nav: false,
       dots: false,
-      autoplayTimeout: 8000,
+      autoplayTimeout: 3000,
     }
   };
 

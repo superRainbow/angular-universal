@@ -33,7 +33,7 @@ export class AdCarouselComponent implements OnInit, AfterViewInit, AfterViewChec
     nav: false,
     dots: true,
     autoplay: true,
-    autoplayTimeout: 3000,
+    autoplayTimeout: 4000,
     autoplayHoverPause: true,
     lazyLoad: true,
     loop: true,

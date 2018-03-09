@@ -38,7 +38,7 @@ export class ServiceComponent implements OnInit {
   ];
   adOptins= {
     nav: true,
-    autoplayTimeout: 8000,
+    autoplayTimeout: 3000,
   };
   promiseList= [
     '從 2010 年來累積的豐富實戰經驗，提供您最佳的導入建議。',
