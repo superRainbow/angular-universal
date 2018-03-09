@@ -53,9 +53,9 @@ header{
     left: 0;
     top: -10px;
     img{
-      width: 75%;
+      width: 80%;
       height: auto;
-      margin: 17px 0 0 20px;
+      margin: 22px 0 0 20px;
     }
   }
   nav{
@@ -137,6 +137,12 @@ header{
       background: $theme-light-blue;
       &:after{
         display: none;
+      }
+    }
+    h1{
+      img{
+        width: 75%;
+        margin: 17px 0 0 20px;
       }
     }
     nav{
