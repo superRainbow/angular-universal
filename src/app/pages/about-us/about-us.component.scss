@@ -30,6 +30,13 @@
       }
     }
   }
+  @include pad-width{
+    background-attachment: inherit;
+    height: 285px;
+    ul{
+      top: 45px;
+    }
+  }
   @include phone-width{
     background-image: url('/assets/img/img_landing_page_m_about_us.jpg');
     background-attachment: inherit;

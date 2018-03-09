@@ -7,16 +7,16 @@
   bottom: 0px;
   .owl-dot{
     display: inline-block;
-    width: 15px;
-    height: 15px;
+    width: 11px;
+    height: 11px;
     margin: 20px 5px;
     border-radius: 50%;
     border: 1px solid #fff;
-    background: #fff;
-    opacity: 0.6;
+    background: transparent;
+    opacity: 1;
     &.active{
-      border: #247E9B 3px solid;
-      background: #247E9B;
+      border: #fff 1px solid;
+      background: #fff;
       opacity: 1;
     }
   }

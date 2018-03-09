@@ -185,4 +185,12 @@ export class ContactUsComponent implements OnInit {
     });
   };
 
+  /**
+   * 滑到常見問題區塊
+   */
+  goQuestion(){
+    const qa = $('.qa').offset().top - 50;
+    $('body, html').animate({'scrollTop' : qa}, 500);
+  }
+
 }

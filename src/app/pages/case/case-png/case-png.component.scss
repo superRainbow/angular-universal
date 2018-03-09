@@ -87,14 +87,14 @@
     }
   }
   @include pad-width{
-    height: 400px;
+    height: 285px;
     background-attachment: inherit;
     &:before{
       top: 50%;
       margin-top: -265px;
     }
     &>div{
-      top: 150px;
+      top: 80px;
       margin-left: -470px;
       i{
         display: none;

@@ -4,7 +4,7 @@ $menu-items: 4;
 
 header{
   width: 100%;
-  background: rgba(0,111,148,0.85);
+  background: $theme-light-blue;
   position: fixed;
   z-index: 100;
   &:before{
@@ -109,6 +109,18 @@ header{
             opacity: 1;
           }
         }
+      }
+    }
+  }
+  @include pad-width{
+    &.top{
+      position: static  !important;
+      background: $theme-light-blue !important;
+      &:before{
+        display: none !important;
+      }
+      &:after{
+        display: none !important;
       }
     }
   }

@@ -26,6 +26,9 @@ section, article, aside, footer, header, nav, main {
 	display: block;
 }
 
+select::-ms-expand {
+  display: none;
+}
 
 // my reset
 a{

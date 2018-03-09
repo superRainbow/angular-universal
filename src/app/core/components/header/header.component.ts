@@ -66,11 +66,21 @@ export class HeaderComponent implements OnInit {
   }
 
   /**
+   * 判斷連結是否作用中
+   * @param url
+   */
+  isActive(url) {
+    return this.router.isActive(`${url}`, false);
+   }
+
+  /**
    * 裝置效果
    */
   mobileEvent(item) {
-    this.showMenu();
+    console.log('item', item.url);
     this.menu.nativeElement.checked = !this.menu.nativeElement.checked;
+    // this.router.navigateByUrl(`${item.url}`);
     this.googleAnalyticsEventsService.emitEvent('點擊Top區域', '點擊導覽動作', `點擊(${item.name})`, null);
+    this.showMenu();
   }
 }
