@@ -115,22 +115,22 @@
     &:before{
       content: "";
       display: block;
-      width: 300px;
+      width: 450px;
       height: 1px;
       background: #C9C9C9;
       position: absolute;
       top: 12px;
-      left: -310px;
+      left: -460px;
     }
     &:after{
       content: "";
       display: block;
-      width: 300px;
+      width: 450px;
       height: 1px;
       background: #C9C9C9;
       position: absolute;
       top: 12px;
-      right: -310px;
+      right: -460px;
     }
   }
   ul{

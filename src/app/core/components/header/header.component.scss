@@ -55,7 +55,7 @@ header{
     img{
       width: 80%;
       height: auto;
-      margin: 22px 0 0 20px;
+      margin: 25px 0 0 20px;
     }
   }
   nav{
@@ -150,8 +150,8 @@ header{
     }
     h1{
       img{
-        width: 75%;
-        margin: 17px 0 0 20px;
+        width: 62%;
+        margin: 21px 0 0 18px;
       }
     }
     nav{
@@ -179,8 +179,8 @@ header{
             content: "";
             display: block;
             width: calc(100% - 40px);
-            height: 2px;
-            background: #189ec3;
+            height: 1px;
+            background: #067290;
             position: absolute;
             left: 20px;
             top: 0;
@@ -190,8 +190,8 @@ header{
               content: "";
               display: block;
               width: calc(100% - 40px);
-              height: 2px;
-              background: #189ec3;
+              height: 1px;
+              background: #067290;
               position: absolute;
               left: 20px;
               bottom: 0;
@@ -203,7 +203,7 @@ header{
             line-height: initial;
               &:hover, &:active{
                 color: #fff;
-                background: #0389ae;
+                background: #005577;
               }
           }
         }
@@ -235,8 +235,8 @@ header{
   }
   label {
     position: relative;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     display: block;
     cursor: pointer;
     background: transparent;
@@ -252,8 +252,8 @@ header{
   .burger:before {
     content: '';
     position: absolute;
-    top: 6px;
-    width: 40px;
+    top: 4px;
+    width: 30px;
     height: 2px;
     border-radius: 2px;
     background: #fafafa;
@@ -264,7 +264,7 @@ header{
     content: '';
     position: absolute;
     bottom: 6px;
-    width: 40px;
+    width: 30px;
     height: 2px;
     border-radius: 2px;
     background: #fafafa;
@@ -278,7 +278,7 @@ header{
     position: absolute;
     top: 50%;
     margin-top: -2px;
-    width: 40px;
+    width: 30px;
     height: 2px;
     border-radius: 2px;
     background: #fafafa;
@@ -293,7 +293,7 @@ header{
     position: absolute;
     top: 50%;
     margin-top: -2px;
-    width: 40px;
+    width: 30px;
     height: 2px;
     border-radius: 2px;
     background: #fafafa;
