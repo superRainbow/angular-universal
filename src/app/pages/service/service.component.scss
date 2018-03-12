@@ -54,6 +54,9 @@
   }
 }
 
+.service-content{
+  overflow: hidden;
+}
 
 .belief{
   background: rgba(241,244,246, 0.9);
@@ -298,7 +301,6 @@
 
 .process{
   width: 100%;
-  overflow: hidden;
   h2{
     @extend %theme-h2;
   }
