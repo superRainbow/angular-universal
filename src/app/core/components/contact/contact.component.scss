@@ -6,7 +6,7 @@
   &>section{
     max-width: $pc-media;
     margin: 0 auto;
-    padding: 85px 10px;
+    padding: 85px 10px 10px;
     position: relative;
     text-align: center;
     &:before{
@@ -56,6 +56,7 @@
       font-size: 22px;
     }
     .contact-btn{
+      width: 280px;
       opacity:1;
       &.show{
         transform: none;

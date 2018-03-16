@@ -1,0 +1,120 @@
+@import "~assets/scss/helpers/index";
+
+footer{
+  background: $theme-light-blue;
+  color: #BDDCEA;
+  a{
+    color: #BDDCEA;
+    // @extend %bgImg-text-hidden;
+  }
+  span{
+    display: none;
+  }
+  section{
+    max-width: $pc-media;
+    margin: 0 auto;
+    padding: 50px 10px 85px;
+    position: relative;
+    text-align: center;
+  }
+  ul{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+  }
+  .mitake{
+    display: flex;
+    li{
+      text-align: center;
+      position: relative;
+      &:last-child{
+        padding: 0 15px;
+        &:before{
+          content: "";
+          display: block;
+          background: #BDDCEA;
+          width: 1px;
+          height: 50px;
+          position: absolute;
+          top: 0px;
+          left: 0;
+        }
+        &:after{
+          content: "";
+          display: block;
+          background: #BDDCEA;
+          width: 1px;
+          height: 50px;
+          position: absolute;
+          top: 0px;
+          right: 0;
+        }
+      }
+    }
+    a{
+      width: 120px;
+      height: 40px;
+      font-size: 40px;
+      overflow: hidden;
+    }
+    p{
+      font-size: 17px;
+      -webkit-margin-before: 0;
+      -webkit-margin-after: 0;
+      line-height: normal;
+      padding: 0;
+      margin: 0;
+    }
+    small{
+      font-size: 10px;
+      line-height: normal;
+      -webkit-margin-before: 0;
+      -webkit-margin-after: 0;
+      padding: 0;
+      margin: 0;
+    }
+  }
+  .sns{
+    display: flex;
+    margin-left: 15px;
+    li{
+      width: 40px;
+      height: 34px;
+      overflow: hidden;
+    }
+    a{
+      font-size: 31px;
+    }
+  }
+  @include phone-width{
+    ul{
+      flex-direction:column;
+    }
+    .mitake{
+      li{
+        &:last-child{
+          &:after{
+            display: none;
+          }
+        }
+      }
+      p{
+        font-size: 12.5px;
+      }
+      small{
+        font-size: 9px;
+      }
+    }
+    .sns{
+      margin: 20px 0 0;
+      li{
+        width: 50px;
+        height: 38px;
+        overflow: hidden;
+      }
+      a{
+        font-size: 38px;
+      }
+    }
+  }
+}

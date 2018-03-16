@@ -3,11 +3,11 @@ iconfont Webfont
 */
 @font-face {
 	font-family: 'iconfont';
-	src: url('iconfont.eot?1519292869516');
-	src: url('iconfont.eot?#iefix-1519292869516') format('embedded-opentype'),
-		url('iconfont.woff2?1519292869516') format('woff2'),
-		url('iconfont.woff?1519292869516') format('woff'),
-		url('iconfont.ttf?1519292869516') format('truetype');
+	src: url('iconfont.eot?1521186334224');
+	src: url('iconfont.eot?#iefix-1521186334224') format('embedded-opentype'),
+		url('iconfont.woff2?1521186334224') format('woff2'),
+		url('iconfont.woff?1521186334224') format('woff'),
+		url('iconfont.ttf?1521186334224') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -169,58 +169,74 @@ Glyphs list
 	content: '\ea22';
 }
 
-.icon-ico_helping_hand:before {
+.icon-ico_fb:before {
 	content: '\ea23';
 }
 
-.icon-ico_management:before {
+.icon-ico_helping_hand:before {
 	content: '\ea24';
 }
 
-.icon-ico_multicast:before {
+.icon-ico_management:before {
 	content: '\ea25';
 }
 
-.icon-ico_no_paper:before {
+.icon-ico_mtk_logo:before {
 	content: '\ea26';
 }
 
-.icon-ico_privacy:before {
+.icon-ico_multicast:before {
 	content: '\ea27';
 }
 
-.icon-ico_process:before {
+.icon-ico_no_paper:before {
 	content: '\ea28';
 }
 
-.icon-ico_report:before {
+.icon-ico_privacy:before {
 	content: '\ea29';
 }
 
-.icon-ico_sales:before {
+.icon-ico_process:before {
 	content: '\ea2a';
 }
 
-.icon-ico_sales_package:before {
+.icon-ico_report:before {
 	content: '\ea2b';
 }
 
-.icon-ico_sent_data:before {
+.icon-ico_sales:before {
 	content: '\ea2c';
 }
 
-.icon-ico_sent_ok:before {
+.icon-ico_sales_package:before {
 	content: '\ea2d';
 }
 
-.icon-ico_telphone:before {
+.icon-ico_sent_data:before {
 	content: '\ea2e';
 }
 
-.icon-ico_training:before {
+.icon-ico_sent_ok:before {
 	content: '\ea2f';
 }
 
-.icon-icons8-megaphone:before {
+.icon-ico_telphone:before {
 	content: '\ea30';
+}
+
+.icon-ico_training:before {
+	content: '\ea31';
+}
+
+.icon-ico_twitter:before {
+	content: '\ea32';
+}
+
+.icon-ico_youtube:before {
+	content: '\ea33';
+}
+
+.icon-icons8-megaphone:before {
+	content: '\ea34';
 }

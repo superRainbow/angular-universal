@@ -10,6 +10,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { FixedPageComponent } from './components/fixed-page/fixed-page.component';
 import { PanelComponent } from './components/panel/panel.component';
 import { BSModalComponent } from './components/bs-modal/bs-modal.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 const components = [
   HeaderComponent,
@@ -17,7 +18,8 @@ const components = [
   ContactComponent,
   FixedPageComponent,
   PanelComponent,
-  BSModalComponent
+  BSModalComponent,
+  FooterComponent
 ];
 
 
