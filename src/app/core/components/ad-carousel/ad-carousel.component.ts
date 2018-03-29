@@ -32,6 +32,7 @@ export class AdCarouselComponent implements OnInit, AfterViewInit, AfterViewChec
   defaultOptions: any = {
     nav: false,
     dots: true,
+    navText: ['<i class="icon-btn_previous_w"></i>', '<i class="icon-btn_next_w"></i>'],
     autoplay: true,
     autoplayTimeout: 4000,
     autoplayHoverPause: true,

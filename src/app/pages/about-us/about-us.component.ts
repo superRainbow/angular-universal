@@ -69,6 +69,7 @@ export class AboutUsComponent implements OnInit {
 
   teamList = [
     {
+      icon: 'icon-ico_about_code_font',
       topTitle: '陣容堅實的研發團隊',
       topDes: '我們擁有專業的程式團隊，並具有各種平台的開發技術；提供客戶之多元需求。而多年來與各產業合作；早已累積了豐富的開發經驗，除了能開發符合使用者操作的人性化介面，更能協助業主以程式開發、軟硬體規劃來優化企業內部之工作流程。',
       topSmallDes: '',
@@ -76,6 +77,7 @@ export class AboutUsComponent implements OnInit {
       subDes: '目前程式 Engineer 42 員，PM/SA/設計 22 員；團隊合計 64 員。'
     },
     {
+      icon: 'icon-ico_about_great_font',
       topTitle: '團隊能力，有口皆碑',
       topDes: '多年來與購物、醫療、產壽險等產業合作，開發出可滿足各行業的客制化功能，為全台業界經驗最豐富的 APP 研發團隊。',
       topSmallDes: '',
@@ -83,6 +85,7 @@ export class AboutUsComponent implements OnInit {
       subDes: '我們團隊在開發能力或經驗除了頗受市場好評之外，更為業界之標竿。'
     },
     {
+      icon: 'icon-ico_about_service_font',
       topTitle: '安心的維運保障，並提供客服諮詢服務',
       topDes: '與業主合作；確實的完成專案上線外，我們也提供保障資料安全的維運技術。其維運包含 *GCP (Google 雲端平台) 與客服等服務。',
       topSmallDes: 'GCP（Google Cloud Platform）是一項使用了 Google 核心基礎架構、資料分析和機器學習技術的雲計算服務。用於構建從簡單網站到複雜應用程式的一系列程式，並提供一系列模塊化的基於雲的服務和大量開發工具，例如託管和計算、雲存儲、資料存儲。其優點為是在 Google 的核心架構下，安全無虞且功能完善，適合所有企業使用。',

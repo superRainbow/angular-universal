@@ -375,6 +375,14 @@
       text-align: center;
       cursor: pointer;
     }
+    i{
+      display: none;
+      color: #b9ff7d;
+      font-size: 35px;
+      position: absolute;
+      left: -45px;
+      top: 0;
+    }
     h2{
       color: #3D3D3D;
       font-size: 28px;
@@ -473,16 +481,7 @@
         border-radius: none;
         padding-left: 30px;
         margin-bottom: 65px;
-        &:nth-child(2){
-          h2:after{
-            content: "\ea1b";
-          }
-        }
-        &:nth-child(3){
-          h2:after{
-            content: "\ea1c";
-          }
-        }
+
         h2, p, small, span{
           display: block;
           width: 100%;
@@ -501,17 +500,8 @@
           margin-bottom: 10px;
           order:1;
           position: relative;
-          &:after{
-            content: "\ea07";
-            font-family: 'iconfont';
-            color: #b9ff7d;
-            font-size: 35px;
-            display: block;
-            position: absolute;
-            left: -45px;
-            top: 0;
-          }
         }
+
         p{
           order:2;
         }
@@ -527,6 +517,9 @@
           margin-top: 15px;
           order:3;
         }
+      }
+      i{
+        display: block;
       }
     }
   }

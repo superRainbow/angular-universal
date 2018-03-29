@@ -12,10 +12,6 @@
     }
     &.mail{
       a{
-        &:after{
-          content: "\ea0e";
-          left: -50px;
-        }
         &:hover{
           background: $theme-green;
         }
@@ -23,14 +19,13 @@
     }
     &.top{
       a{
-        &:after{
-          content: "\ea17";
-          left: -48px;
-        }
         &:hover{
           background: #4da3c9;
         }
       }
+    }
+    span{
+      display: none;
     }
   }
   a{
@@ -42,14 +37,8 @@
     text-align: center;
     position: relative;
     color: #fff;
-    @extend %bgImg-text-hidden;
-    &:after{
-      font-size: 24px;
-      font-family: 'iconfont';
-      display: block;
-      position: absolute;
-      top: 23px;
-    }
+    font-size: 24px;
+    padding-top: 23px;
   }
   @include pad-width{
     flex-direction: column;
@@ -77,10 +66,8 @@
     a{
       width: 50px;
       height: 50px;
-      &:after{
-        font-size: 20px;
-        top: 13px;
-      }
+      font-size: 20px;
+      padding-top: 10px;
     }
   }
 }

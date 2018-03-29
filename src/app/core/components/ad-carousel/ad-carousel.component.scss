@@ -33,29 +33,19 @@
     transition: all .3s ease;
     position: absolute;
     opacity: 0;
-    @extend %bgImg-text-hidden;
-    &:after{
+    i{
       font-size: 30px;
       font-family: 'iconfont';
       text-shadow: rgba(0,0,0,0.25) 2px 2px 5px;
       color: #ffffff;
       display: block;
-      position: absolute;
-      top: 10px;
-      left: -20px;
     }
   }
   .owl-prev{
     left: 0px;
-    &:after{
-      content: "\ea04";
-    }
   }
   .owl-next{
     right: 0px;
-    &:after{
-      content: "\ea03";
-    }
   }
 }
 :host /deep/ .owl-carousel{

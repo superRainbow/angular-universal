@@ -170,15 +170,16 @@ textarea{
     @extend %theme-p;
     position: relative;
     padding-left: 20px;
-    &:before {
-      content: "\ea11";
-      display: inline-block;
-      font-family: 'iconfont';
+    i{
       font-size: 10px;
       color: $theme-green;
-      position: absolute;
-      left: 0;
-      top: 0;
+      display: inline-block;
+      vertical-align: top;
+    }
+    span{
+      width: calc(100% - 30px);
+      display: inline-block;
+      vertical-align: top;
     }
   }
 }

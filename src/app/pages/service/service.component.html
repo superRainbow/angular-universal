@@ -3,37 +3,37 @@
     <app-ad-carousel [data]="adData" [options]="adOptins"></app-ad-carousel>
   </section>
   <section class="belief">
-      <article>
-          <div class="img">
-              <img src="./assets/img/ic_service@2x.png">
-          </div>
-          <div class="word">
-            <h2>服務理念</h2>
-            <p>在成本日益高漲的年代，我們知道身為高階主管的您，除了將作業流程行動化外，更需要一個可以有效降低人員學習曲線、將成功的作業流程複製給所有同仁，同樣重要的事，在變化快速的行動平台上，您需要一個實力堅強，同時擁有豐富實戰經驗的開發及維運團隊，讓您可以將心力放在公司業務的拓展，客戶關係的維繫，我們團隊多年來耕耘於行動平台，是您可以放心的合作夥伴。</p>
-          </div>
-      </article>
+    <article>
+      <div class="img">
+        <img src="./assets/img/ic_service@2x.png">
+      </div>
+      <div class="word">
+        <h2>服務理念</h2>
+        <p>在成本日益高漲的年代，我們知道身為高階主管的您，除了將作業流程行動化外，更需要一個可以有效降低人員學習曲線、將成功的作業流程複製給所有同仁，同樣重要的事，在變化快速的行動平台上，您需要一個實力堅強，同時擁有豐富實戰經驗的開發及維運團隊，讓您可以將心力放在公司業務的拓展，客戶關係的維繫，我們團隊多年來耕耘於行動平台，是您可以放心的合作夥伴。</p>
+      </div>
+    </article>
   </section>
   <section class="features">
-      <article>
-          <h2>服務功能</h2>
-          <ul>
-            <li *ngFor="let item of featuresList">
-              <a>
-                  <i [ngClass]="item.class"></i>
-                  <h3>{{ item.title }}</h3>
-                  <ol>
-                    <li *ngFor="let o of item.des">{{ o }}</li>
-                  </ol>
-              </a>
-            </li>
-          </ul>
-      </article>
+    <article>
+      <h2>服務功能</h2>
+      <ul>
+        <li *ngFor="let item of featuresList">
+          <a>
+            <i [ngClass]="item.class"></i>
+            <h3>{{ item.title }}</h3>
+            <ol>
+              <li *ngFor="let o of item.des">{{ o }}</li>
+            </ol>
+          </a>
+        </li>
+      </ul>
+    </article>
   </section>
   <section class="process">
     <div class="stage1" [ngClass]="stage1Style">
       <h2 class="animation delay-0">AGILE 精神，讓計畫趕上變化</h2>
       <ul>
-        <li class="animation" [ngClass]="'delay-'+ i" *ngFor="let item of stage1List;let i = index;" (click)="changeBg(i)" (mouseenter) ="changeBg(i)">
+        <li class="animation" [ngClass]="'delay-'+ i" *ngFor="let item of stage1List;let i = index;" (click)="changeBg(i)" (mouseenter)="changeBg(i)">
           <h3>{{item.title}}</h3>
           <p>{{item.des}}</p>
         </li>
@@ -41,21 +41,25 @@
     </div>
     <div class="stage2">
       <section>
-        <lottie-animation-view
-          [options]="stage2Config"
-          (animCreated)="handleAnimation('stage2', $event)">
+        <lottie-animation-view [options]="stage2Config" (animCreated)="handleAnimation('stage2', $event)">
         </lottie-animation-view>
         <div class="macbook">
           <div class="mobile animation"></div>
           <div class="pc">
-              <div class="macbook-body animation delay-0"></div>
-              <div class="macbook-one animation delay-1"></div>
-              <div class="macbook-two animation delay-2"></div>
-              <ul>
-                <li class="animation delay-3"><i class="icon-ic_front_end"></i></li>
-                <li class="animation delay-4"><i class="icon-ic_middle_end"></i></li>
-                <li class="animation delay-5"><i class="icon-ic_back_end"></i></li>
-              </ul>
+            <div class="macbook-body animation delay-0"></div>
+            <div class="macbook-one animation delay-1"></div>
+            <div class="macbook-two animation delay-2"></div>
+            <ul>
+              <li class="animation delay-3">
+                <i class="icon-ic_front_end"></i>
+              </li>
+              <li class="animation delay-4">
+                <i class="icon-ic_middle_end"></i>
+              </li>
+              <li class="animation delay-5">
+                <i class="icon-ic_back_end"></i>
+              </li>
+            </ul>
           </div>
         </div>
         <div class="word animation delay-6">
@@ -66,18 +70,22 @@
     </div>
     <div class="stage3">
       <section>
-        <lottie-animation-view
-          [options]="stage3Config"
-          (animCreated)="handleAnimation('stage3', $event)">
+        <lottie-animation-view [options]="stage3Config" (animCreated)="handleAnimation('stage3', $event)">
         </lottie-animation-view>
         <div class="pad">
           <div class="mobile animation"></div>
           <div class="pc">
             <div class="body animation delay-0"></div>
             <ul>
-              <li class="animation delay-1"><i class="icon-ic_test"></i></li>
-              <li class="animation delay-2"><i class="icon-ic_validation"></i></li>
-              <li class="animation delay-3"><i class="icon-ic_check_ok"></i></li>
+              <li class="animation delay-1">
+                <i class="icon-ic_test"></i>
+              </li>
+              <li class="animation delay-2">
+                <i class="icon-ic_validation"></i>
+              </li>
+              <li class="animation delay-3">
+                <i class="icon-ic_check_ok"></i>
+              </li>
             </ul>
           </div>
         </div>
@@ -89,19 +97,17 @@
     </div>
     <div class="stage4">
       <section>
-        <lottie-animation-view
-          [options]="stage4Config"
-          (animCreated)="handleAnimation('stage4', $event)">
+        <lottie-animation-view [options]="stage4Config" (animCreated)="handleAnimation('stage4', $event)">
         </lottie-animation-view>
         <div class="word">
-            <h3 class="animation delay-0">{{stage4Item.title}}</h3>
-            <h4 class="animation delay-1">{{stage4Item.des}}</h4>
-            <ul>
-              <li *ngFor="let item of stage4List;let i = index;" class="animation delay-{{i+2}}">
-                <i class="{{item.class}}"></i>
-                <p>{{item.des}}</p>
-              </li>
-            </ul>
+          <h3 class="animation delay-0">{{stage4Item.title}}</h3>
+          <h4 class="animation delay-1">{{stage4Item.des}}</h4>
+          <ul>
+            <li *ngFor="let item of stage4List;let i = index;" class="animation delay-{{i+2}}">
+              <i class="{{item.class}}"></i>
+              <p>{{item.des}}</p>
+            </li>
+          </ul>
         </div>
       </section>
     </div>
@@ -119,17 +125,20 @@
     </div>
   </section>
   <section class="promise">
-      <article>
-          <div class="img">
-              <img src="./assets/img/ic_commitment@2x.png">
-          </div>
-          <div class="word">
-            <h2>我們承諾：</h2>
-            <ul class="ul-style">
-              <li *ngFor="let item of promiseList">{{ item }}</li>
-            </ul>
-          </div>
-      </article>
+    <article>
+      <div class="img">
+        <img src="./assets/img/ic_commitment@2x.png">
+      </div>
+      <div class="word">
+        <h2>我們承諾：</h2>
+        <ul class="ul-style">
+          <li *ngFor="let item of promiseList">
+            <i class="icon-ic_right_arrow"></i>
+            <span>{{item}}</span>
+          </li>
+        </ul>
+      </div>
+    </article>
   </section>
 </div>
 <app-contact></app-contact>

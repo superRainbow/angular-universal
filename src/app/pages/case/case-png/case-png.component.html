@@ -21,9 +21,15 @@
             <i [ngClass]="a2Section.icon"></i>
           </div>
           <div class="word">
-            <h2>{{a2Section.title}}</h2>
+            <h2>
+              <i class="icon-ico_management"></i>
+              <span>{{a2Section.title}}</span>
+            </h2>
             <ul class="ul-style">
-              <li *ngFor="let item of a2Section.list">{{item}}</li>
+              <li *ngFor="let item of a2Section.list">
+                <i class="icon-ic_right_arrow"></i>
+                <span>{{item}}</span>
+              </li>
             </ul>
           </div>
       </article>

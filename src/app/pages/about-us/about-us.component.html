@@ -36,7 +36,10 @@
     <section class="team" [ngClass]="teamStyle">
       <ul>
         <li [ngClass]="{'show': i === nowItem}" *ngFor="let item of teamList;let i = index;" (click)="changeBg(i)" (mouseenter) ="changeBg(i)">
-          <h2>{{item.topTitle}}</h2>
+          <h2>
+            <i [ngClass]="item.icon"></i>
+            {{item.topTitle}}
+          </h2>
           <p>{{item.topDes}}</p>
           <small>{{item.topSmallDes}}</small>
           <h3>{{item.subTitle}}</h3>

@@ -1,4 +1,14 @@
 <ul class="fixed-page">
-  <li class="mail" *ngIf="!hideMail"><a (click)="getRouterLink('contact-us')">聯絡我們</a></li>
-  <li class="top"><a (click)="scrollTop()">top</a></li>
+  <li class="mail" *ngIf="!hideMail">
+    <a (click)="getRouterLink('contact-us')">
+        <i class="icon-ic_mail2"></i>
+      <span>聯絡我們</span>
+    </a>
+  </li>
+  <li class="top">
+    <a (click)="scrollTop()">
+      <i class="icon-ic_up2"></i>
+      <span>top</span>
+    </a>
+  </li>
 </ul>
